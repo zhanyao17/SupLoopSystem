@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch recycle_Main",
+            "request": "launch",
+            "mainClass": "base.recycleDepartment.Methods.recycle_Main",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch generateJobCardPreview",
+            "request": "launch",
+            "mainClass": "controller.productionDepartment.generateJobCardPreview",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch Manufacture_Main",
+            "request": "launch",
+            "mainClass": "base.manufactureDepartment.Methods.Manufacture_Main",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch updateStartDate",
+            "request": "launch",
+            "mainClass": "controller.manufactureDepartment.ElectrodeProduction.updateStartDate",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch updateEndDate",
+            "request": "launch",
+            "mainClass": "controller.manufactureDepartment.ElectrodeProduction.updateEndDate",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "controller.Main",
+            "vmArgs": "--module-path /Users/linzhanyao/JavaExLib/javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch electrodeProduct",
+            "request": "launch",
+            "mainClass": "base.manufactureDepartment.Methods.electrodeProduct",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch electrodeProduct",
+            "request": "launch",
+            "mainClass": "base.manufactureDepartment.electrodeProduct",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch JobCard_Modification",
+            "request": "launch",
+            "mainClass": "base.manufactureDepartment.JobCard_Modification",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "vmArgs": "--module-path /Users/linzhanyao/JavaExLib/javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "SupLoopSystem_e57fc582"
+        }
+    ]
+}

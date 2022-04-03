@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.recycleDepartment.materialTransfer_recycle">
+   <children>
+      <BorderPane prefHeight="840.0" prefWidth="1550.0">
+         <left>
+            <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
+                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
+                  <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #00004d;" />
+                  <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="122.0" layoutY="29.0" text="Log out" textFill="WHITE" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="97.0" prefWidth="118.0" />
+                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f1f2;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tableView" layoutX="57.0" layoutY="105.0" prefHeight="621.0" prefWidth="1184.0">
+                    <columns>
+                      <TableColumn fx:id="rmIdColumn" prefWidth="378.0" text="Raw Material ID" />
+                      <TableColumn fx:id="rmNameColumn" prefWidth="467.0" text="Raw Material Name" />
+                        <TableColumn fx:id="materialQColumn" prefWidth="338.0" text="Material Quantity (KG)" />
+                    </columns>
+                  </TableView>
+                  <AnchorPane layoutX="42.0" layoutY="11.0" prefHeight="58.0" prefWidth="1190.0" style="-fx-background-color: #dde2eb; -fx-background-radius: 10;">
+                     <children>
+                        <TextField fx:id="enterQuantity" layoutX="579.0" layoutY="18.0" prefHeight="25.0" prefWidth="199.0" promptText="e.g. : 50.. ( in kg  )" style="-fx-background-radius: 10;" />
+                        <Button layoutX="1036.0" layoutY="17.0" mnemonicParsing="false" onAction="#transferMaterial" prefHeight="25.0" prefWidth="128.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c #00008c#00008c;" text="Transfer Material" textFill="WHITE" />
+                        <ChoiceBox fx:id="rmChoicesBox" layoutX="169.0" layoutY="16.0" prefHeight="25.0" prefWidth="199.0" style="-fx-background-radius: 10; -fx-background-color: #dde2eb#dde2eb; -fx-border-color: #ffffff#ffffff; -fx-border-radius: 10; -fx-border-width: 2;" />
+                        <Label layoutX="20.0" layoutY="21.0" text="Select Raw Material :" textFill="#00008c">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="417.0" layoutY="21.0" text="Insert Material Quantity : " textFill="#00008c">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="791.0" layoutY="17.0" mnemonicParsing="false" onAction="#addToTable" prefHeight="25.0" prefWidth="93.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c #00008c#00008c;" text="Add To Table" textFill="WHITE" />
+                        <Button fx:id="resetTableButton" layoutX="893.0" layoutY="17.0" mnemonicParsing="false" onAction="#resetTable" prefHeight="25.0" prefWidth="93.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c #00008c#00008c #00008c#00008c #00008c#00008c;" text="Reset Table" textFill="WHITE" />
+                        <Separator layoutX="1008.0" layoutY="11.0" orientation="VERTICAL" prefHeight="37.0" prefWidth="2.0" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="alertLabel" layoutX="157.0" layoutY="79.0" text="Label" textFill="RED" />
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
