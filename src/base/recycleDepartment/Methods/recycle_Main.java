@@ -63,7 +63,7 @@ public class recycle_Main
         }
         return rmId;
     }
-
+    /*************************************************  Add Recycle Raw to observable list  ***********************************************/  // 2 APRIL
 
     /************************************************* Return Recycle_Material_ID INt  ***********************************************/  // 2 APRIL
     public int generateRecycleMaterialID(String recycleMaterialQuery) throws SQLException

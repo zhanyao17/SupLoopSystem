@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 
 import base.recycleDepartment.ArrayList.recycledRMArray;
 import base.recycleDepartment.Methods.recycle_Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -49,12 +51,34 @@ public class materialTransfer_recycle implements Initializable
     private String rawMaterialQuery = "SELECT rw.RM_ID, rw.Raw_material_name from raw_material rw;";
     private String recycleMaterialQuery = "SELECT recycle_material_ID from recycle_material;";
     private String warehouseQuery = "SELECT Warehouse_ID from warehouse;";
+    private boolean isRepeat=false;
+    // define observable list
+    private ObservableList <recycledRMArray> newRM =  FXCollections.observableArrayList();;
 
+
+    /***************************************************  Detect duplicate <Action>  *************************************************/  // 3 APRIL
+    public void checkDuplicates() throws SQLException
+    {
+       
+        float capQ = Float.parseFloat(enterQuantity.getText());
+        for (recycledRMArray col : newRM) 
+        {
+            if (col.getRmId().equals((rRawmaterial.getRmId(rmChoicesBox.getValue(), rawMaterialQuery)))) 
+            {
+                capQ += Float.parseFloat(col.getMaterial_quantity());
+                newRM.add(new recycledRMArray(col.getRmId(), col.getRmName(), String.valueOf(capQ)));
+                newRM.remove(col);
+                isRepeat = true;
+                break;
+            }    
+        }
+
+    }
     /***************************************************  Add Item to Table View Button <Action>  *************************************************/  // 2 APRIL
     
     public void addToTable(ActionEvent event) throws IOException
     {
-        resetTableButton.setDisable(false);
+       
         alertLabel.setText("");
         try {
             if ((rRawmaterial.isString(enterQuantity.getText()))||(enterQuantity.getText()==null)) {
@@ -62,13 +86,16 @@ public class materialTransfer_recycle implements Initializable
                 rmChoicesBox.setValue("");
                 alertLabel.setText("Invalid Input !!");
             } else {
-                recycledRMArray newRm = new  recycledRMArray(rRawmaterial.getRmId(rmChoicesBox.getValue(), 
-                                        rawMaterialQuery),rmChoicesBox.getValue(), enterQuantity.getText());
-            
-                tableView.getItems().add(newRm);
-                enterQuantity.setText("");
-                rmChoicesBox.setValue("");
+                checkDuplicates();
+                if (!isRepeat) 
+                {
+                    newRM.add(new recycledRMArray(rRawmaterial.getRmId(rmChoicesBox.getValue(), rawMaterialQuery), rmChoicesBox.getValue(), enterQuantity.getText()));   
+                }
+                isRepeat = false;
             }
+            tableView.setItems(newRM);
+            enterQuantity.setText("");
+            rmChoicesBox.setValue("");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -154,7 +181,5 @@ public class materialTransfer_recycle implements Initializable
 
 
     }
-
-
 
 }
