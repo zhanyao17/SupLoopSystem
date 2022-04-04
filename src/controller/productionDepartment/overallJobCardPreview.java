@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import javax.swing.Action;
 
 import base.manufactureDepartment.ArrayList.JobCardArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
@@ -174,8 +173,6 @@ public class overallJobCardPreview implements Initializable
                 
         }
     }
-
-    /***************************************** Define show scene functions <Define>   ****************************************/  
 
 
     @Override

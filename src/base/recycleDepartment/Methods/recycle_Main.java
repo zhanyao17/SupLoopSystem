@@ -13,6 +13,7 @@ public class recycle_Main
 
     // define variable
     private String rmId;
+    private boolean isRepeat = false;
 
     // define array list
     private List<String> rmNameList=new ArrayList<>();;
@@ -63,8 +64,7 @@ public class recycle_Main
         }
         return rmId;
     }
-    /*************************************************  Add Recycle Raw to observable list  ***********************************************/  // 2 APRIL
-
+    
     /************************************************* Return Recycle_Material_ID INt  ***********************************************/  // 2 APRIL
     public int generateRecycleMaterialID(String recycleMaterialQuery) throws SQLException
     {
@@ -90,6 +90,46 @@ public class recycle_Main
         return countWId;
     }
 
+    /************************************************* Check repeat RMID on Recycle Department  ***********************************************/  // 3 APRIL
+    public String getRepeatRM(String rId, String totRecycleQuery) throws SQLException
+    {
+        String capRecycleId = ""; 
+        DBConnectors demo = new DBConnectors();
+        Connection con = demo.getConnection(); 
+        ResultSet rs = con.createStatement().executeQuery(totRecycleQuery);
+        if (rs.next()) 
+        {
+            if (rs.getString("RM_ID").equals(rId)) 
+            {
+                capRecycleId = rs.getString("recycle_material_ID");
+                isRepeat = true;
+            }    
+        }
+        return capRecycleId;
+    }
+
+    /************************************************* Validate Input Boolean  ***********************************************/  // 3 APRIL
+    public String getExistingQuantity(String rId, String warehouseQuery) throws SQLException
+    {
+        String capMatQuantity = "";
+        DBConnectors demo = new DBConnectors();
+        Connection con = demo.getConnection(); 
+        ResultSet rs = con.createStatement().executeQuery(warehouseQuery);
+        while (rs.next()) 
+        {
+            if (rs.getString("recycle_material_ID")!=null) 
+            {
+                if (rs.getString("recycle_material_ID").equals(rId)) 
+                {
+                    capMatQuantity = rs.getString("material_quantity");
+                    break;
+                }
+            }    
+        }
+        return capMatQuantity;
+    }
+
+
     /************************************************* Validate Input Boolean  ***********************************************/  // 2 APRIL
     public boolean isString(String value){
         boolean dataType;
@@ -101,5 +141,8 @@ public class recycle_Main
         }
         return dataType;
     };
+
+    /************************************************* Validate Input Boolean  ***********************************************/  
+    public boolean getIsRepeat(){ return isRepeat;}
 
 }

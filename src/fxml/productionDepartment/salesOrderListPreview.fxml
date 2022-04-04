@@ -20,11 +20,17 @@
                <children>
                   <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
                      <children>
-                        <Label layoutX="93.0" layoutY="32.0" text="Sales Order List" textFill="WHITE" />
+                        <Label layoutX="93.0" layoutY="32.0" text="Sales Order List" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
                      </children></Pane>
                   <Pane onMouseClicked="#jumpToOverallJobCard" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
                      <children>
-                        <Label layoutX="80.0" layoutY="32.0" text="Overall Job Card List" textFill="WHITE" />
+                        <Label layoutX="80.0" layoutY="32.0" text="Overall Job Card List" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
                      </children></Pane>
                   <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #00004d;" />
                   <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">

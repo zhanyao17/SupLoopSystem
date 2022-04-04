@@ -49,14 +49,15 @@ public class materialTransfer_recycle implements Initializable
 
     // Statement
     private String rawMaterialQuery = "SELECT rw.RM_ID, rw.Raw_material_name from raw_material rw;";
-    private String recycleMaterialQuery = "SELECT recycle_material_ID from recycle_material;";
-    private String warehouseQuery = "SELECT Warehouse_ID from warehouse;";
+    private String recycleMaterialQuery = "SELECT recycle_material_ID, RM_ID from recycle_material;";
+    private String warehouseQuery = "SELECT Warehouse_ID, recycle_material_ID , material_quantity from warehouse;";
     private boolean isRepeat=false;
+    
     // define observable list
     private ObservableList <recycledRMArray> newRM =  FXCollections.observableArrayList();;
 
 
-    /***************************************************  Detect duplicate <Action>  *************************************************/  // 3 APRIL
+    /***************************************************  Detect duplicate <Methods>  *************************************************/  // 3 APRIL
     public void checkDuplicates() throws SQLException
     {
        
@@ -78,7 +79,7 @@ public class materialTransfer_recycle implements Initializable
     
     public void addToTable(ActionEvent event) throws IOException
     {
-       
+        resetTableButton.setDisable(false);
         alertLabel.setText("");
         try {
             if ((rRawmaterial.isString(enterQuantity.getText()))||(enterQuantity.getText()==null)) {
@@ -87,11 +88,11 @@ public class materialTransfer_recycle implements Initializable
                 alertLabel.setText("Invalid Input !!");
             } else {
                 checkDuplicates();
-                if (!isRepeat) 
+                if (!isRepeat) // if there is no repeat (Add new item into it)
                 {
                     newRM.add(new recycledRMArray(rRawmaterial.getRmId(rmChoicesBox.getValue(), rawMaterialQuery), rmChoicesBox.getValue(), enterQuantity.getText()));   
                 }
-                isRepeat = false;
+                isRepeat = false; // reset boolean
             }
             tableView.setItems(newRM);
             enterQuantity.setText("");
@@ -123,24 +124,35 @@ public class materialTransfer_recycle implements Initializable
                 break;    
             }
             
-            // Adding counter for keys
-            countRYId++;
-            countWarId++;
+            // check is there any raw material repeated
+            String recycleId =  rRawmaterial.getRepeatRM(col.getRmId(), recycleMaterialQuery);
+            if (rRawmaterial.getIsRepeat()) // if Recycle id is repeated
+            {
+                String exMatQ =  rRawmaterial.getExistingQuantity(recycleId, warehouseQuery);
+                float newQuantity = Float.parseFloat(exMatQ) + Float.parseFloat(col.getMaterial_quantity());
+                String upWarehouseQuery = "UPDATE warehouse SET material_quantity = "+"'"+String.valueOf(newQuantity)+"'" +" WHERE recycle_material_ID = "+"'"+recycleId+"'";
+                rRawmaterial.insertData(upWarehouseQuery);
+            }else
+            {
+                // Adding counter for keys
+                countRYId++;
+                countWarId++;
 
-            String newRyId = "ry"+Integer.toString(countRYId);
-            String newWarId = "W"+Integer.toString(countWarId);
+                String newRyId = "ry"+Integer.toString(countRYId);
+                String newWarId = "W"+Integer.toString(countWarId);
 
-            // Define insert Statement
-            String upRecycleMatQuery = "INSERT into recycle_material VALUES ( "+"'"+newRyId+"' ,"+"'"+col.getRmId()+"' );";
-            String upWarehouseQuery = "INSERT INTO warehouse VALUES ("+"'"+newWarId+"', "+"'"+col.getMaterial_quantity()+"',"+"'NA'"+",'"+newRyId+"') ;"; // label as NA - Not assign
-            
-            rRawmaterial.insertData(upRecycleMatQuery);
-            rRawmaterial.insertData(upWarehouseQuery);
+                // Define insert Statement
+                String upRecycleMatQuery = "INSERT into recycle_material VALUES ( "+"'"+newRyId+"' ,"+"'"+col.getRmId()+"' );";
+                String upWarehouseQuery = "INSERT INTO warehouse VALUES ("+"'"+newWarId+"', "+"'"+col.getMaterial_quantity()+"',"+"'NA'"+",'"+newRyId+"') ;"; // label as NA - Not assign
+                
+                rRawmaterial.insertData(upRecycleMatQuery);
+                rRawmaterial.insertData(upWarehouseQuery);
+            }
         }
         alertLabel.setText("*** Raw Material Has Been Successfully Transfer To Warehouse ***");
         tableView.getItems().clear();
+        newRM.clear();
         }
-
     }
 
     /***************************************************  Reset Table Button <Action>  *************************************************/  // 2 APRIL
