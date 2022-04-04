@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="502.0" style="-fx-background-color: #f0f1f2;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.stockControlDepartment.updateQuantityController">
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="480.0" style="-fx-background-color: #dde2eb; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="warehouseIDLabel" alignment="CENTER" layoutY="9.0" prefHeight="26.0" prefWidth="118.0" style="-fx-font-weight: bold; -fx-background-color: #dde2eb#dde2eb; -fx-background-radius: 10;" text="W1" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="398.0" layoutY="7.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="26.0" prefWidth="54.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c; -fx-font-weight: bold;" text="Back" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="updateQuantityButton" layoutX="308.0" layoutY="351.0" mnemonicParsing="false" onAction="#updateQuantity" prefHeight="26.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c; -fx-font-weight: bold;" text="Update Quantity" textFill="WHITE" />
+      <Label fx:id="noticeLabel" alignment="CENTER" layoutX="-1.0" layoutY="69.0" prefHeight="40.0" prefWidth="504.0" style="-fx-font-weight: bold; -fx-background-color: #f5c998#f5c998;" text="PLEASE MAKE SURE THE ACTUAL QUANTITY HAVE REACH THE REQUIRED QUANTITY ! ! !">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="alertMessage" layoutX="59.0" layoutY="327.0" text="Label" textFill="#f50000" />
+      <GridPane layoutX="16.0" layoutY="125.0" prefHeight="182.0" prefWidth="466.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="234.0" text="Actual Quantity (KG)" />
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="234.0" text="Material Quantity (KG)" GridPane.rowIndex="1" />
+            <Label fx:id="actualQuantityLabel" alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="Label" GridPane.columnIndex="1" />
+            <Label fx:id="materialQuantityLabel" alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TextField fx:id="insertQuantityTxtField" layoutX="49.0" layoutY="351.0" prefHeight="26.0" prefWidth="234.0" promptText="Insert Quantity" style="-fx-background-radius: 10; -fx-background-color: #dde2eb;" />
+   </children>
+</AnchorPane>

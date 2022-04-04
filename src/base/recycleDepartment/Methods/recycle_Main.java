@@ -16,7 +16,7 @@ public class recycle_Main
     private boolean isRepeat = false;
 
     // define array list
-    private List<String> rmNameList=new ArrayList<>();;
+    private List<String> rmNameList=new ArrayList<>();
 
     /*************************************************  Insert Data Into MySQl Function  ***********************************************/  // 2 APRIL
     public void insertData(String query) 

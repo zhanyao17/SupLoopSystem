@@ -59,8 +59,7 @@ public class materialTransfer_recycle implements Initializable
 
     /***************************************************  Detect duplicate <Methods>  *************************************************/  // 3 APRIL
     public void checkDuplicates() throws SQLException
-    {
-       
+    {  
         float capQ = Float.parseFloat(enterQuantity.getText());
         for (recycledRMArray col : newRM) 
         {
@@ -73,7 +72,6 @@ public class materialTransfer_recycle implements Initializable
                 break;
             }    
         }
-
     }
     /***************************************************  Add Item to Table View Button <Action>  *************************************************/  // 2 APRIL
     
@@ -107,14 +105,12 @@ public class materialTransfer_recycle implements Initializable
     /***************************************************  Transfer Material to Warehouse Button <Action>  *************************************************/  // 2 APRIL
     public void transferMaterial(ActionEvent event) throws SQLException
     {
-        // if table view == null - take action
-        // else cap all value
         int countRYId = rRawmaterial.generateRecycleMaterialID(recycleMaterialQuery); // Recycle Mat id
         int countWarId = rRawmaterial.generateWarehouseId(warehouseQuery); // warehouseId
-        if (tableView.getItems().isEmpty()) 
+        
+        if (tableView.getItems().isEmpty()) // null value transfer will be capture here
         {
             alertLabel.setText("Please Add Raw Material To Table before Transfer Material !!");
-            // null value transfer will be capture here
         }else{
             for (recycledRMArray col : tableView.getItems()) 
         {

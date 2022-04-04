@@ -4,7 +4,7 @@ package JDBC_Connectors;
 import java.sql.*;
 
 
-public class DBConnectors{  
+public class DBConnectors{  // switch user 
     public Connection getConnection() throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Sup_Loop_Database","newUser","zhanyao12345");

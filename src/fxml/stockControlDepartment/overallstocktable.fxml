@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.stockControlDepartment.overallstocktableContoller">
+   <children>
+      <BorderPane prefHeight="840.0" prefWidth="1550.0">
+         <left>
+            <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="690.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Pane layoutY="158.0" onMouseClicked="#jumpToKeepTrack" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                           <children>
+                              <Label layoutX="56.0" layoutY="33.0" text="Keep Track Stock Information" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutY="6.0" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                           <children>
+                              <Label layoutX="57.0" layoutY="28.0" text="Overall Stock Information" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutY="76.0" onMouseClicked="#jumpToMaterialRequest" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                           <children>
+                              <Label layoutX="72.0" layoutY="32.0" text="Material Request List" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutY="240.0" onMouseClicked="#jumpToRecycleRaw" prefHeight="64.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                           <children>
+                              <Label layoutX="74.0" layoutY="24.0" text="Recycled Raw Material" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children></Pane>
+                  <Pane prefHeight="64.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="116.0" layoutY="20.0" text="Log out" textFill="WHITE" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="97.0" prefWidth="118.0" />
+                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="overalltableview" layoutX="40.0" layoutY="92.0" prefHeight="624.0" prefWidth="1213.0">
+                    <columns>
+                      <TableColumn fx:id="materialIDcolumn" prefWidth="95.20001220703125" text="Material ID" />
+                      <TableColumn fx:id="materialNamecolumn" prefWidth="398.6666259765625" text="Material Name" />
+                        <TableColumn fx:id="remainingQuantitycolumn" prefWidth="183.7333984375" text="Material Quantity (KG)" />
+                        <TableColumn fx:id="warehouseLabelcolumn" prefWidth="215.46661376953125" text="Warehouse Label" />
+                        <TableColumn fx:id="purchaseIDcolumn" prefWidth="165.3333740234375" text="Purchase ID" />
+                        <TableColumn fx:id="orderIDcolumn" prefWidth="154.66650390625" text="Order ID" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="54.0" layoutY="52.0" prefHeight="22.0" prefWidth="120.0" text="Order ID:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="keywordTextField" layoutX="126.0" layoutY="50.0" onKeyTyped="#searchOrderID" prefHeight="26.0" prefWidth="685.0" promptText="Keywords...." />
+                  <ChoiceBox fx:id="warehouseCategory" layoutX="1011.0" layoutY="49.0" prefHeight="26.0" prefWidth="198.0" />
+                  <Label layoutX="878.0" layoutY="51.0" prefHeight="22.0" prefWidth="120.0" text="Warehouse Label:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="7.0" prefHeight="32.0" prefWidth="329.0" text="Overall Stock Information">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
