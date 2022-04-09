@@ -6,17 +6,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-
+// import class
 import base.manufactureDepartment.ArrayList.rawMaterialQuantityArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
+
+// javafx
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -69,6 +73,18 @@ public class updateStartDate_CellAssembly implements Initializable
         Cancel();    
     }
 
+    /***************************************** Alert Information <Mehtods>   ****************************************/  
+    public void alertMesssage() 
+    {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText("Material Transfer Request has been sent !!\n"+
+                            "Job Card Start Date & Status had been updated.");
+        alert.setTitle("** Information Context **");
+        alert.setHeaderText(null);
+
+        alert.showAndWait();
+    }
+    
     /***************************************** Start Job button <Action>  ****************************************/  
     public void startJob(ActionEvent event) throws IOException 
     {
@@ -98,6 +114,7 @@ public class updateStartDate_CellAssembly implements Initializable
             jobCardData.insertData(updateJobCardStatusQuery);
         }
         Cancel();
+        alertMesssage();
     }
 
 
@@ -137,11 +154,13 @@ public class updateStartDate_CellAssembly implements Initializable
         if (!jobCardData.isReady(rawMaterialQuantity)) {
             // ifelse - determine the job card required any raw material or not
             if (jobCardData.isRawMaterialNull(jobCardRawMaterial)) {
+                // cannot proceed
                 noticeLabel.setText("*** RAW MATERIAL IS NOT READY YET ***");
                 addInformation.setText("This Job Card Did Not Required Any Material !!");
                 tableView.setItems(emptyList);
                 requestStartJobButton.setDisable(true);
             } else {
+                // cannot proceed
                 jobCardData.showRequiredRmQuantity(jobCardRawMaterial, rawMaterialQuantity);
                 noticeLabel.setText("*** RAW MATERIAL IS NOT READY YET ***");
                 addInformation.setText("Real-Time Stock Quantity Shown Above !!");
@@ -150,14 +169,17 @@ public class updateStartDate_CellAssembly implements Initializable
             }
         } else {
             if (!jobCardData.checkStatus(searchJobCardStatus)) {
+                // cannot proceed 
                 noticeLabel.setText("** PREVIOUS JOB ARE STILL IN-COMPLETED **"); 
                 requestStartJobButton.setDisable(true);
             } else {
                 if (jobCardData.isRawMaterialNull(jobCardRawMaterial)) {
+                    // can proceed 
                     noticeLabel.setText("*** THIS JOB CARD DID NOT REQUIRED ANY MATERIALS ***");
                     tableView.setItems(emptyList);
                     requestStartJobButton.setText("Start Job");
                 } else {
+                    // can proceed 
                     jobCardData.showRequiredRmQuantity(jobCardRawMaterial, rawMaterialQuantity);
                     noticeLabel.setText("*** REQUEST MATERIAL BEFORE START JOB ***");
                     tableView.setItems(jobCardData.getRawMaterialList());

@@ -4,10 +4,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// import class
 import base.manufactureDepartment.Methods.Manufacture_Main;
+
+// javafx
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -31,6 +36,7 @@ public class updateEndDate_CellAssembly {
     Manufacture_Main updateStatus1 = new Manufacture_Main();
     Manufacture_Main updateStatus2 = new Manufacture_Main();
 
+    
     /***************************************** Get Data from other scene <Mehtods>   ****************************************/  
     public void previeweJobCardDetails(String jId, String rQ) 
     {
@@ -56,6 +62,17 @@ public class updateEndDate_CellAssembly {
         Cancel();    
     }
 
+    /***************************************** Alert Information <Mehtods>   ****************************************/  
+    public void alertMesssage() 
+    {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText("The Job Card End Date & Job Card Status Had Been Updated");
+        alert.setTitle("** Information Context **");
+        alert.setHeaderText(null);
+
+        alert.showAndWait();
+    }
+
     /***************************************** Complete Job Button <Action>   ****************************************/  
     public void completeTask(ActionEvent event) throws IOException 
     {
@@ -67,5 +84,6 @@ public class updateEndDate_CellAssembly {
         updateStatus1.insertData(upEndDateQuery);
         updateStatus2.insertData(upJobCardStatusQuery);
         Cancel();
+        alertMesssage();
     }
 }

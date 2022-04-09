@@ -13,6 +13,8 @@ import base.manufactureDepartment.ArrayList.rawMaterialQuantityArray;
 import base.manufactureDepartment.ArrayList.salesOrderListArray;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 public class Manufacture_Main 
 {
@@ -39,7 +41,7 @@ public class Manufacture_Main
     /************************************************************************************************************************************/ 
     /****************************************************  PRODUCTION DEPARTMNET Function  *********************************************/ 
 
-    // -- FUNCTION FOR GEENERATE JOB CARD
+
     /************************************************  View Overall Sales Order Function  ***********************************************/  // 31 MARCH
     public void viewOverallSalesOrder(String salesOrderListQuery) 
     {
@@ -211,7 +213,7 @@ public class Manufacture_Main
                 if (jobCardLIst.toLowerCase(Locale.ROOT).contains(oId.toLowerCase(Locale.ROOT))) 
                 {
                     jobEleCard.add(new JobCardArray(rs.getString("JC_ID"), rs.getString("Order_ID"),  rs.getString("JC_Status"), 
-                    rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date")));
+                    rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date"),circleStatus(rs.getString("JC_Status"))));
                 }
             }
             con.close();
@@ -224,6 +226,28 @@ public class Manufacture_Main
     
     /***********************************************************************************************************************************/ 
     /**************************************************  MANUFACTURE DEPARTMNET Function  **********************************************/
+
+    /*************************************************  View Overall Job Card Function  ************************************************/  // 6 APRIL
+    public Circle circleStatus(String jcStatus)
+    {
+        Circle cS = new Circle(7);
+
+        // pending, In_complete and completed   
+        if (jcStatus.equals("Pending")) 
+        {
+            cS.setFill(Color.rgb(252, 3, 3)); // red colour
+        } else {
+            if (jcStatus.equals("In_complete")) 
+            {
+                cS.setFill(Color.rgb(252, 152, 3)); // orange colour
+            } else {
+                cS.setFill(Color.rgb(82, 252, 3)); // green colour
+            }
+        }
+        return cS;
+    }
+
+
 
     /*************************************************  View Overall Job Card Function  ************************************************/  // 26 MARCH
     public void selectEleJobCard(String showJobCardListQuery) 
@@ -238,7 +262,7 @@ public class Manufacture_Main
             while(rs.next())
             {  
                 jobEleCard.add(new JobCardArray(rs.getString("JC_ID"), rs.getString("Order_ID"),  rs.getString("JC_Status"), 
-                rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date")));
+                rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date"),circleStatus(rs.getString("JC_Status"))));
             }
             con.close();
         } catch (Exception e) {
@@ -249,7 +273,7 @@ public class Manufacture_Main
 
     /**************************************************  Filter JC_Status Function  ***************************************************/  // 26 MARCH
     
-    // pending // completed // not_completed -> INCLUDED FOUR TYPE
+    // pending // completed // In_complete -> INCLUDED FOUR TYPE
 
     public void filterEleJobCard(String jStatus, String showJobCardListQuery ) 
     {
@@ -265,7 +289,7 @@ public class Manufacture_Main
                 if (rs.getString("JC_Status").equals(jStatus)) 
                 {
                     jobEleCard.add(new JobCardArray(rs.getString("JC_ID"), rs.getString("Order_ID"),  rs.getString("JC_Status"), 
-                    rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date")));
+                    rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date"),circleStatus(rs.getString("JC_Status"))));
                 } else {
                     continue;
                 }
@@ -293,7 +317,7 @@ public class Manufacture_Main
                 if (jobCardLIst.toLowerCase(Locale.ROOT).contains(jId.toLowerCase(Locale.ROOT))) 
                 {
                     jobEleCard.add(new JobCardArray(rs.getString("JC_ID"), rs.getString("Order_ID"),  rs.getString("JC_Status"), 
-                    rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date")));
+                    rs.getString("OP_name"),rs.getString("OP_code"), rs.getString("Start_Date"), rs.getString("End_Date"),circleStatus(rs.getString("JC_Status"))));
                 }
             }
         } catch (Exception e) {

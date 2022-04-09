@@ -1,5 +1,6 @@
 package base.manufactureDepartment.ArrayList;
 
+import javafx.scene.shape.Circle;
 
 public class JobCardArray {
     private String Jc_Id;
@@ -9,8 +10,9 @@ public class JobCardArray {
     private String Start_Date;
     private String End_Date;
     private String Op_Name;
+    private Circle colourStatus;
 
-    public JobCardArray(String Jc_Id,String Order_Id, String Jc_Status, String Op_Name, String Op_Code,  String Start_Date, String End_Date)
+    public JobCardArray(String Jc_Id,String Order_Id, String Jc_Status, String Op_Name, String Op_Code,  String Start_Date, String End_Date, Circle colourStatus)
     {
         this.Jc_Id = Jc_Id;
         this.Order_Id = Order_Id;
@@ -19,6 +21,7 @@ public class JobCardArray {
         this.Op_Code = Op_Code;
         this.Start_Date = Start_Date;
         this.End_Date = End_Date;
+        this.colourStatus = colourStatus;
     }
 
     public String getJc_Id() 
@@ -70,4 +73,13 @@ public class JobCardArray {
     public void setOp_Name(String Op_Name) {
         this.Op_Name= Op_Name;
     }
+
+    public Circle getColourStatus() {
+        return colourStatus;
+    }
+
+    public void setColourStatus(Circle colourStatus) {
+        this.colourStatus = colourStatus;
+    }
+
 }

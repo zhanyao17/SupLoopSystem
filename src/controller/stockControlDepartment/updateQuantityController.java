@@ -3,6 +3,7 @@ package controller.stockControlDepartment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -91,7 +92,16 @@ public class updateQuantityController implements Initializable {
     }
 
 
-    
+    public void alertMesssage()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText("Updated Successfully");
+        alert.setTitle(" Update Confirmation ");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
+
     public void updateQuantity(ActionEvent event) throws SQLException {
         if(getIsString(insertQuantityTxtField.getText()) || (insertQuantityTxtField.getText() == null)){
             alertMessage.setText("Invalid Input");
@@ -115,6 +125,7 @@ public class updateQuantityController implements Initializable {
                     insertData(q1);
                 }
                 Cancel();
+                alertMesssage();
             }
         }
     }

@@ -4,9 +4,6 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import javax.print.DocFlavor.STRING;
-
-import base.manufactureDepartment.ArrayList.generateJobCardArray;
 import base.manufactureDepartment.ArrayList.salesOrderListArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
 import controller.Main;
@@ -17,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -33,6 +31,9 @@ public class salesOrderListPreview implements Initializable
     @FXML private ChoiceBox<String> filterOrderStatus;
     @FXML private ChoiceBox<String> filterStatus;
 
+    // label
+    @FXML private Label salesOrderListLabel;
+    @FXML private Label overallJobCardList;
 
     // TableColumn & Table View
     @FXML private TableColumn<salesOrderListArray,String> oderIdColumn;
@@ -50,18 +51,18 @@ public class salesOrderListPreview implements Initializable
 
 
     // define variable
-    salesOrderListArray temp;
-    Date lastClickTime;
+    private salesOrderListArray temp;
+    private Date lastClickTime;
     private Parent root;
 
     // Static Variable
     public static boolean inUpdateStatusMode = false;
 
-    
     /***************************************** Define Query <Variables> ****************************************/  
     
     private String salesOrderListQuery =   "SELECT Order_ID, Item_code, Order_quantity, Order_date, Due_date, Status, Shipping_status " +
-                                            "FROM sales_order;";
+                                            "FROM sales_order "+
+                                            "ORDER BY (regexp_replace(Order_ID,'[^0-9]','')) +0; "; // order by
     
 
     /***************************************** Jump to Overall Job Card List <Action>  ****************************************/  
@@ -149,7 +150,6 @@ public class salesOrderListPreview implements Initializable
     }
     
 
-
     /***************************************** Select column <Action>  ****************************************/  
     public void selectColumn() 
     {
@@ -176,38 +176,6 @@ public class salesOrderListPreview implements Initializable
                 
         }
     }    
-        
-    
-
-
-
-    /***************************************** Select Column <Action> ****************************************/  
-    // public void selectColumn() 
-    // {
-    //     salesOrderListArray row = tableView.getSelectionModel().getSelectedItem();
-    //     if(row == null) return;
-    //     if(row!=temp) {
-    //         temp=row;
-    //         lastClickTime = new Date();
-    //     }else{
-    //         Date now = new Date();
-    //         long diff = now.getTime()-lastClickTime.getTime();
-    //         if (inUpdateStatusMode) {
-                
-    //         } else {
-    //             if (diff<300) {
-    //                 inUpdateStatusMode = true;
-    //                 // popUpStartJobPage(row.getOrder_Id(), row.getJc_Id(),row.getOp_Code(), "/fxml/productionDepartment/showMaterialRequired.fxml");   
-    //             } else {
-    //                 lastClickTime = new Date();
-    //             }
-    //         }
-                
-    //     }
-        
-    // }
-    
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

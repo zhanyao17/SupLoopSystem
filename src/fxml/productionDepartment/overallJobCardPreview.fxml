@@ -56,13 +56,14 @@
                <children>
                   <TableView fx:id="tableView" layoutX="53.0" layoutY="116.0" onMouseClicked="#selectColumn" prefHeight="611.0" prefWidth="1184.0">
                     <columns>
-                      <TableColumn fx:id="jobCardIdColumn" prefWidth="108.09991455078125" text="JobCard ID" />
-                      <TableColumn fx:id="oderIdColumn" prefWidth="124.74652099609375" text="Order ID" />
-                        <TableColumn fx:id="jobCardStatusColumn" prefWidth="146.25347900390625" text="Job Card Status" />
-                        <TableColumn fx:id="operationNameColumn" prefWidth="220.52581787109375" text="Operation Name" />
-                        <TableColumn fx:id="operationIdColumn" prefWidth="206.90594482421875" text="Operation ID" />
-                        <TableColumn fx:id="startDateColumn" prefWidth="192.9248046875" text="Start Date" />
-                        <TableColumn fx:id="endDateColumn" prefWidth="185.0" text="End Date" />
+                      <TableColumn fx:id="jobCardIdColumn" prefWidth="98.0" text="JobCard ID" />
+                      <TableColumn fx:id="oderIdColumn" prefWidth="123.0" text="Order ID" />
+                        <TableColumn fx:id="jobCardStatusColumn" prefWidth="139.0" text="Job Card Status" />
+                        <TableColumn fx:id="operationNameColumn" prefWidth="209.0" text="Operation Name" />
+                        <TableColumn fx:id="operationIdColumn" prefWidth="182.0" text="Operation ID" />
+                        <TableColumn fx:id="startDateColumn" prefWidth="198.0" text="Start Date" />
+                        <TableColumn fx:id="endDateColumn" prefWidth="172.0" text="End Date" />
+                        <TableColumn fx:id="colourStatusColumn" prefWidth="62.0" text="Status" />
                     </columns>
                   </TableView>
                   <AnchorPane layoutX="42.0" layoutY="11.0" prefHeight="58.0" prefWidth="1190.0" style="-fx-background-color: #dde2eb; -fx-background-radius: 10;">

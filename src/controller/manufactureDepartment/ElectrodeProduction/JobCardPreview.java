@@ -5,9 +5,11 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-
+// import class
 import base.manufactureDepartment.ArrayList.JobCardArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
+
+// javafx
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class JobCardPreview implements Initializable
@@ -44,6 +47,7 @@ public class JobCardPreview implements Initializable
     @FXML private TableColumn<JobCardArray,String> operationIdColumn;
     @FXML private TableColumn<JobCardArray,String> startDateColumn;
     @FXML private TableColumn<JobCardArray,String> endDateColumn;
+    @FXML private TableColumn<JobCardArray,Circle> colourStatusColumn;
 
     @FXML private TableView<JobCardArray> tableView;
 
@@ -63,14 +67,14 @@ public class JobCardPreview implements Initializable
     private String overallEleJobCardQuery = "SELECT jc.*, op.OP_name"+" FROM job_card jc INNER JOIN `operation` op on jc.OP_code = op.OP_code "+
                                             "INNER JOIN `workstation` ws on ws.WS_ID = op.WS_ID "+
                                             "WHERE ws.WS_ID = 'WS001'"+
-                                            "ORDER BY jc.JC_ID;";
+                                            "ORDER BY (regexp_replace(jc.JC_ID,'[^0-9]','')) +0 ;";
 
 
     private String getRequiredOrderQuantity =  "SELECT jc.JC_ID, so.Order_quantity"+" FROM `job_card` jc INNER JOIN sales_order so on jc.Order_ID = so.Order_ID "+
                                                 "INNER JOIN `operation` op on jc.OP_code = op.OP_code "+
                                                 "INNER JOIN `workstation` ws on ws.WS_ID = op.WS_ID "+
                                                 "WHERE ws.WS_ID = 'WS001'"+
-                                                "ORDER BY jc.JC_ID;";
+                                                "ORDER BY (regexp_replace(jc.JC_ID,'[^0-9]','')) +0 ;";
 
 
     /***************************************** Refresh TableView <Methods>  ****************************************/  
@@ -214,6 +218,10 @@ public class JobCardPreview implements Initializable
         operationIdColumn.setCellValueFactory(new PropertyValueFactory<JobCardArray,String>("Op_Code"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<JobCardArray,String>("Start_Date"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<JobCardArray,String>("End_Date"));
+        colourStatusColumn.setCellValueFactory(new PropertyValueFactory<JobCardArray,Circle>("colourStatus"));
+
+        colourStatusColumn.setStyle("-fx-alignment: CENTER;");
+
 
         tableView.setItems(eleJobCard.getJobEleCard());
 

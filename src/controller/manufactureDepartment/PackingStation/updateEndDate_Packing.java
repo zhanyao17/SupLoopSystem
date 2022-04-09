@@ -8,7 +8,9 @@ import java.util.Date;
 import base.manufactureDepartment.Methods.Manufacture_Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -64,6 +66,18 @@ public class updateEndDate_Packing
     public void name() {
         
     }
+
+    /***************************************** Alert Information <Mehtods>   ****************************************/  
+    public void alertMesssage() 
+    {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText("The Job Card End Date & Job Card Status Had Been Updated");
+        alert.setTitle("** Information Context **");
+        alert.setHeaderText(null);
+
+        alert.showAndWait();
+    }
+
     /***************************************** Complete Job Button <Action>   ****************************************/  
     public void completeTask(ActionEvent event) throws IOException 
     {
@@ -89,5 +103,6 @@ public class updateEndDate_Packing
             updateStatus1.insertData(updateDeliveryStatus); // Sales order shipping_status
         }
         Cancel();
+        alertMesssage();
     }  
 }

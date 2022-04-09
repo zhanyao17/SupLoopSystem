@@ -36,6 +36,6 @@
             <TableColumn fx:id="matQuantityColumn" prefWidth="152.0" text="Material Quantity (KG)" />
         </columns>
       </TableView>
-      <Label fx:id="addInformation" layoutX="122.0" layoutY="354.0" text="Label" textFill="#f50000" />
+      <Label fx:id="addInformation" layoutX="35.0" layoutY="355.0" text="Label" textFill="#f50000" />
    </children>
 </AnchorPane>

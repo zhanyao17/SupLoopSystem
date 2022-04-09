@@ -11,10 +11,12 @@ import base.manufactureDepartment.Methods.Manufacture_Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -60,6 +62,18 @@ public class generateJobCardPreview implements Initializable
     {
         Cancel();
     }
+
+    /***************************************** Alert Information <Mehtods>   ****************************************/  
+    public void alertMesssage() 
+    {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText("New Job Card Informations !!\n"+
+                            "Job Card had been sucessfully generated.");
+        alert.setTitle("** Information Context **");
+        alert.setHeaderText(null);
+
+        alert.showAndWait();
+    }
     
     /***************************************** Generate Job Card Button <Action> ***********************************/  //  1 APRIL
     public void generateJobCard(ActionEvent event)throws IOException 
@@ -73,6 +87,7 @@ public class generateJobCardPreview implements Initializable
         String updateSalesOrderStatus = "UPDATE sales_order SET Status = 'Generated' WHERE Order_ID = " +"'"+oId+"' ;";
         newJobCard.insertData(updateSalesOrderStatus);
         Cancel();    
+        alertMesssage();
     }
 
 

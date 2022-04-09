@@ -20,9 +20,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.Pane;
 
 public class materialTransfer_recycle implements Initializable
 {
+
 
     // textField
     @FXML private TextField enterQuantity;
@@ -35,6 +38,8 @@ public class materialTransfer_recycle implements Initializable
 
     // Button
     @FXML private Button resetTableButton;
+    @FXML private Button addToTableButton;
+    @FXML private Button transferMatButton;
 
     // Table view & Column
     @FXML private TableColumn<recycledRMArray,String> rmIdColumn;
@@ -44,8 +49,16 @@ public class materialTransfer_recycle implements Initializable
     @FXML private TableView <recycledRMArray> tableView;
 
 
+    // demo
+    @FXML private Pane demo1;
+    @FXML private Pane logOutButton;
+
     // create class
     recycle_Main rRawmaterial = new recycle_Main();
+    
+    // drop shawdow effect
+    DropShadow shadow = new DropShadow();
+
 
     // Statement
     private String rawMaterialQuery = "SELECT rw.RM_ID, rw.Raw_material_name from raw_material rw;";
@@ -56,6 +69,12 @@ public class materialTransfer_recycle implements Initializable
     // define observable list
     private ObservableList <recycledRMArray> newRM =  FXCollections.observableArrayList();;
 
+    /***************************************************  Add shadow effect <Design>  *************************************************/  // 3 APRIL
+    public void buttonShaw(Button buttonId) 
+    {
+        shadow.setRadius(3.0);
+        buttonId.setEffect(shadow);
+    }
 
     /***************************************************  Detect duplicate <Methods>  *************************************************/  // 3 APRIL
     public void checkDuplicates() throws SQLException
@@ -95,12 +114,12 @@ public class materialTransfer_recycle implements Initializable
             tableView.setItems(newRM);
             enterQuantity.setText("");
             rmChoicesBox.setValue("");
+            alertLabel.setText("");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
     /***************************************************  Transfer Material to Warehouse Button <Action>  *************************************************/  // 2 APRIL
     public void transferMaterial(ActionEvent event) throws SQLException
@@ -166,10 +185,24 @@ public class materialTransfer_recycle implements Initializable
     }
 
 
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered
+    public void logOutBarEnter() 
+    {
+        logOutButton.setStyle("-fx-background-color: #3d454d");   
+    }
+    
+    // logout button entered
+    public void logOutBarExited() 
+    {
+        logOutButton.setStyle("-fx-background-color: #4b555e");      
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
+        
         // invisible label
         alertLabel.setText("");
 
@@ -189,5 +222,4 @@ public class materialTransfer_recycle implements Initializable
 
 
     }
-
 }

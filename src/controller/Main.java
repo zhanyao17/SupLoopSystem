@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage){
         try {
             this.primaryStage = primaryStage;
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/stockControlDepartment/MaterialRequestTable.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/recycleDepartment/materialTransfer_recycle.fxml"));
             Scene scene= new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
