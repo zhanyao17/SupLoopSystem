@@ -49,8 +49,7 @@ public class materialTransfer_recycle implements Initializable
     @FXML private TableView <recycledRMArray> tableView;
 
 
-    // demo
-    @FXML private Pane demo1;
+    // Menu Bar
     @FXML private Pane logOutButton;
 
     // create class
@@ -68,13 +67,6 @@ public class materialTransfer_recycle implements Initializable
     
     // define observable list
     private ObservableList <recycledRMArray> newRM =  FXCollections.observableArrayList();;
-
-    /***************************************************  Add shadow effect <Design>  *************************************************/  // 3 APRIL
-    public void buttonShaw(Button buttonId) 
-    {
-        shadow.setRadius(3.0);
-        buttonId.setEffect(shadow);
-    }
 
     /***************************************************  Detect duplicate <Methods>  *************************************************/  // 3 APRIL
     public void checkDuplicates() throws SQLException

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch demo",
+            "request": "launch",
+            "mainClass": "fxml.draft.demo",
+            "projectName": "SupLoopSystem_e57fc582"
+        },
+        {
+            "type": "java",
             "name": "Launch recycle_Main",
             "request": "launch",
             "mainClass": "base.recycleDepartment.Methods.recycle_Main",

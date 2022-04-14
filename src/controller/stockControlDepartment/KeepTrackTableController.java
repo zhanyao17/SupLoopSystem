@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.KeepTrackTableModel;
@@ -42,12 +43,13 @@ public class KeepTrackTableController implements Initializable {
     private TableColumn<KeepTrackTableModel, String> orderIDcolumn;
     
     // textfield
-    @FXML
-    private TextField keywordTextField;
+    @FXML private TextField keywordTextField;
     
-    // choices box
-    // @FXML
-    // private ChoiceBox<String> comboBox;
+    // menu bar
+    @FXML private Pane stockInfoPane;
+    @FXML private Pane matRequestPane;
+    @FXML private Pane recycleMatPane;
+    @FXML private Pane logOutButton;
 
     private KeepTrackTableModel temp;
     private Date lastClickTime;
@@ -242,6 +244,25 @@ public class KeepTrackTableController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
+
+    // over stock information entered & exited
+    public void stockInfoEnter() {stockInfoPane.setStyle("-fx-background-color: #3d454d");}
+    public void stockInfoExited() {stockInfoPane.setStyle("-fx-background-color: #4b555e");}
+
+    // Material Request list entered & exited
+    public void matListEnter() {matRequestPane.setStyle("-fx-background-color: #3d454d");}
+    public void matListExited() {matRequestPane.setStyle("-fx-background-color: #4b555e");}
+
+    // Material Request list entered & exited
+    public void recycleMatEnter() {recycleMatPane.setStyle("-fx-background-color: #3d454d");}
+    public void recycleMatExited() {recycleMatPane.setStyle("-fx-background-color: #4b555e");}
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resource)

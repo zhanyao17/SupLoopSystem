@@ -5,6 +5,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -18,26 +20,42 @@
          <left>
             <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
-                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
-                  <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #00004d;" />
-                  <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d;">
                      <children>
-                        <Label layoutX="122.0" layoutY="29.0" text="Log out" textFill="WHITE" />
+                        <Label layoutX="111.0" layoutY="32.0" text="Job Card" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
+                  <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
+                  <Pane fx:id="logOutButton" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                     <children>
+                        <Label layoutX="115.0" layoutY="31.0" text="Log out" textFill="WHITE" />
                      </children>
                   </Pane>
                </children>
             </VBox>
          </left>
          <top>
-            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="97.0" prefWidth="118.0" />
-                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
+                  <Pane prefHeight="100.0" prefWidth="271.0" style="-fx-background-color: #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d #b6c7d6#b6c7d6 #b6c7d6#b6c7d;">
+                     <children>
+                        <ImageView fitHeight="52.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" x="11.0" y="24.0">
+                           <image>
+                              <Image url="@../../../../logo/logo(Sup-Loop).png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="70.0" prefHeight="17.0" prefWidth="164.0" text="Supply Chain Management System" textFill="#242a30">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="23.0" prefHeight="44.0" prefWidth="231.0" text="SUP-Loop " textFill="#242a30">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
@@ -57,9 +75,9 @@
                         <TableColumn fx:id="colourStatusColumn" prefWidth="51.0" text="Status" />
                     </columns>
                   </TableView>
-                  <AnchorPane layoutX="42.0" layoutY="11.0" prefHeight="58.0" prefWidth="1190.0" style="-fx-background-color: #dde2eb; -fx-background-radius: 10;">
+                  <AnchorPane layoutX="42.0" layoutY="11.0" prefHeight="58.0" prefWidth="1190.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c; -fx-background-radius: 10;">
                      <children>
-                        <TextField fx:id="enterJobCardId" layoutX="32.0" layoutY="14.0" onKeyTyped="#searchJobCardId" prefHeight="30.0" prefWidth="263.0" promptText="JobCard ID" style="-fx-background-radius: 10;" />
+                        <TextField fx:id="enterJobCardId" layoutX="32.0" layoutY="14.0" onKeyTyped="#searchJobCardId" prefHeight="30.0" prefWidth="263.0" promptText="JobCard ID" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ffffff; -fx-border-image-width: 2; -fx-background-color: #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb;" />
                      </children>
                   </AnchorPane>
                   <ChoiceBox fx:id="filterChoices" layoutX="1076.0" layoutY="77.0" prefWidth="150.0" style="-fx-border-radius: 10; -fx-background-color: #dde2eb;" />

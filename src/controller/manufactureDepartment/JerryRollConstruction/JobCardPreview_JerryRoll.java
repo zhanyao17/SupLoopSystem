@@ -21,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -32,7 +33,8 @@ public class JobCardPreview_JerryRoll implements Initializable
     // Choices Box
     @FXML private ChoiceBox<String> filterChoices;
 
-
+    // menu bar
+    @FXML private Pane logOutButton;
 
     // call class
     Manufacture_Main eleJobCard = new Manufacture_Main();
@@ -74,6 +76,8 @@ public class JobCardPreview_JerryRoll implements Initializable
                                                 "WHERE ws.WS_ID = 'WS002'"+
                                                 "ORDER BY (regexp_replace(jc.JC_ID,'[^0-9]','')) +0 ;";
 
+
+    /***************************************** Log Out  <Action>  ****************************************/  
 
     /***************************************** Refresh TableView <Methods>  ****************************************/  
     public void refreshJobCardPreview() 
@@ -196,7 +200,10 @@ public class JobCardPreview_JerryRoll implements Initializable
         }
     }
 
-    /***************************************** Define show scene functions <Define>   ****************************************/  
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
 
 
     @Override

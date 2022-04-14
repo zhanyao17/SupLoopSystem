@@ -89,7 +89,6 @@ public class Manufacture_Main
         }    
     }
 
-    
 
     /*****************************************  Filter Sales Order List Function  ***********************************/  // 31 MARCH
     public void filterStatus(String status, String salesOrderListQuery) 
@@ -221,7 +220,6 @@ public class Manufacture_Main
             e.printStackTrace();
         }    
     }
-
 
     
     /***********************************************************************************************************************************/ 
@@ -477,7 +475,11 @@ public class Manufacture_Main
         return jStatusResult;
     }
 
+    public ArrayList<String> getDeptName(){
+        ArrayList<String> dptName = new ArrayList<>();
 
+        return (ArrayList<String>) dptName;
+    }
     /********************************************* Check Order Have Done Or Not Function  *********************************************/  // 30 March
     public boolean checkOrderProgress(String orderId) 
     {

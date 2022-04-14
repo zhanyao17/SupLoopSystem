@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.swing.Action;
 
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.notAssignMatModel;
@@ -23,6 +22,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 
 public class notAssignMatController implements Initializable
 {
@@ -50,6 +50,12 @@ public class notAssignMatController implements Initializable
     
     private String rawMaterialQuery = "SELECT rw.RM_ID, rw.Raw_material_name from raw_material rw;";
 
+    // menu bar
+    @FXML private Pane stockInfoPane;
+    @FXML private Pane matRequestPane;
+    @FXML private Pane keepTrackPane;
+    @FXML private Pane logOutButton;
+    
     // define observable list
     private ObservableList<notAssignMatModel> notAssignRaw;
 
@@ -158,6 +164,24 @@ public class notAssignMatController implements Initializable
         }
     }
 
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
+
+    // over stock information entered & exited
+    public void stockInfoEnter() {stockInfoPane.setStyle("-fx-background-color: #3d454d");}
+    public void stockInfoExited() {stockInfoPane.setStyle("-fx-background-color: #4b555e");}
+
+    // Material Request list entered & exited
+    public void matListEnter() {matRequestPane.setStyle("-fx-background-color: #3d454d");}
+    public void matListExited() {matRequestPane.setStyle("-fx-background-color: #4b555e");}
+
+    // Keep track pane entered & exited
+    public void keepTrackEnter() {keepTrackPane.setStyle("-fx-background-color: #3d454d");}
+    public void keepTrackExited() {keepTrackPane.setStyle("-fx-background-color: #4b555e");}
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
@@ -177,7 +201,6 @@ public class notAssignMatController implements Initializable
                 e1.printStackTrace();
             }
         });
-        
 
         warehouseIdColumn.setCellValueFactory(new PropertyValueFactory<notAssignMatModel,String>("warehouseId"));
         rmIdColumn.setCellValueFactory(new PropertyValueFactory<notAssignMatModel,String>("rMId"));

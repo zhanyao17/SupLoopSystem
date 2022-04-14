@@ -21,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -32,7 +33,8 @@ public class jobCardPreview_CellAssembly implements Initializable
     // Choices Box
     @FXML private ChoiceBox<String> filterChoices;
 
-
+    // menu bar
+    @FXML private Pane logOutButton;
 
     // call class
     Manufacture_Main eleJobCard = new Manufacture_Main();
@@ -75,14 +77,15 @@ public class jobCardPreview_CellAssembly implements Initializable
                                                 "ORDER BY (regexp_replace(jc.JC_ID,'[^0-9]','')) +0 ;";
 
 
+
+    /***************************************** Log Out  <Action>  ****************************************/  
+    
     /***************************************** Refresh TableView <Methods>  ****************************************/  
     public void refreshJobCardPreview() 
     {
         eleJobCard.selectEleJobCard(overallEleJobCardQuery);
         tableView.setItems(eleJobCard.getJobEleCard());
     }
-
-
 
     /***************************************** Show up Update End Date page  <Methods>  ****************************************/  
     public void popUpEndDatePage(String jId, String fxmlPath) 
@@ -132,7 +135,6 @@ public class jobCardPreview_CellAssembly implements Initializable
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
     }
 
     /***************************************** Filter Job Card Status <Action>  ****************************************/  
@@ -193,10 +195,13 @@ public class jobCardPreview_CellAssembly implements Initializable
                     lastClickTime = new Date();
                 }
             }
-                
         }
     }
 
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
 
 
     @Override

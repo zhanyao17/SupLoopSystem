@@ -11,18 +11,18 @@
 
 <AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="502.0" style="-fx-background-color: #f0f1f2;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.stockControlDepartment.updateQuantityController">
    <children>
-      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="480.0" style="-fx-background-color: #dde2eb; -fx-background-radius: 10;">
+      <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="48.0" prefWidth="480.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c; -fx-background-radius: 10;">
          <children>
-            <Label fx:id="warehouseIDLabel" alignment="CENTER" layoutY="9.0" prefHeight="26.0" prefWidth="118.0" style="-fx-font-weight: bold; -fx-background-color: #dde2eb#dde2eb; -fx-background-radius: 10;" text="W1" textFill="RED">
+            <Label fx:id="warehouseIDLabel" alignment="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="26.0" prefWidth="118.0" style="-fx-font-weight: bold; -fx-background-radius: 10;" text="W1" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="398.0" layoutY="7.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="26.0" prefWidth="54.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c; -fx-font-weight: bold;" text="Back" textFill="WHITE" />
+            <Button layoutX="399.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="26.0" prefWidth="54.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e; -fx-font-weight: bold;" text="Back" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <Button fx:id="updateQuantityButton" layoutX="308.0" layoutY="351.0" mnemonicParsing="false" onAction="#updateQuantity" prefHeight="26.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c; -fx-font-weight: bold;" text="Update Quantity" textFill="WHITE" />
-      <Label fx:id="noticeLabel" alignment="CENTER" layoutX="-1.0" layoutY="69.0" prefHeight="40.0" prefWidth="504.0" style="-fx-font-weight: bold; -fx-background-color: #f5c998#f5c998;" text="PLEASE MAKE SURE THE ACTUAL QUANTITY HAVE REACH THE REQUIRED QUANTITY ! ! !">
+      <Button fx:id="updateQuantityButton" layoutX="322.0" layoutY="351.0" mnemonicParsing="false" onAction="#updateQuantity" prefHeight="26.0" prefWidth="151.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e; -fx-font-weight: bold;" text="Update Quantity" textFill="WHITE" />
+      <Label fx:id="noticeLabel" alignment="CENTER" layoutX="-1.0" layoutY="78.0" prefHeight="40.0" prefWidth="504.0" style="-fx-font-weight: bold; -fx-background-color: #f5c998#f5c998;" text="PLEASE MAKE SURE THE ACTUAL QUANTITY HAVE REACH THE REQUIRED QUANTITY ! ! !">
          <font>
             <Font size="11.0" />
          </font>
@@ -44,6 +44,6 @@
             <Label fx:id="materialQuantityLabel" alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <TextField fx:id="insertQuantityTxtField" layoutX="49.0" layoutY="351.0" prefHeight="26.0" prefWidth="234.0" promptText="Insert Quantity" style="-fx-background-radius: 10; -fx-background-color: #dde2eb;" />
+      <TextField fx:id="insertQuantityTxtField" layoutX="49.0" layoutY="351.0" prefHeight="26.0" prefWidth="234.0" promptText="Insert Quantity" style="-fx-background-radius: 10; -fx-background-color: #dde2eb; -fx-border-image-width: 2;" />
    </children>
 </AnchorPane>

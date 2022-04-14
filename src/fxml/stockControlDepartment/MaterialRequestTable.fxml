@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -16,58 +18,64 @@
          <left>
             <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                  <Pane fx:id="stockInfoPane" onMouseClicked="#jumpToOverall" onMouseEntered="#stockInfoEnter" onMouseExited="#stockInfoExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Pane layoutY="3.0" onMouseClicked="#jumpToOverall" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
-                           <children>
-                              <Label layoutX="68.0" layoutY="29.0" text="Overall Stock Information" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </children></Pane>
-                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
-                     <children>
-                        <Pane layoutY="-1.0" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
-                           <children>
-                              <Label layoutX="79.0" layoutY="29.0" text="Material Request List" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </children></Pane>
-                  <Pane onMouseClicked="#jumpToKeepTrack" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
-                     <children>
-                        <Label layoutX="56.0" layoutY="24.0" text="Keep Track Stock Information" textFill="WHITE" />
+                        <Label layoutX="68.0" layoutY="33.0" text="Overall Stock Information" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
-                  <Pane onMouseClicked="#jumpToRecycleRaw" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d;">
                      <children>
-                        <Label layoutX="74.0" layoutY="24.0" text="Recycled Raw Material" textFill="WHITE" />
+                        <Label layoutX="79.0" layoutY="33.0" text="Material Request List" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
-                  <Pane prefHeight="416.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
-                  <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                  <Pane fx:id="keepTrackPane" onMouseClicked="#jumpToKeepTrack" onMouseEntered="#keepTrackEnter" onMouseExited="#keepTrackExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="116.0" layoutY="28.0" text="Log out" textFill="WHITE" />
+                        <Label layoutX="56.0" layoutY="33.0" text="Keep Track Stock Information" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="recycleMatPane" onMouseClicked="#jumpToRecycleRaw" onMouseEntered="#recycleMatEnter" onMouseExited="#recycleMatExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                     <children>
+                        <Label layoutX="74.0" layoutY="33.0" text="Recycled Raw Material" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="331.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
+                  <Pane fx:id="logOutButton" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                     <children>
+                        <Label layoutX="115.0" layoutY="33.0" text="Log out" textFill="WHITE" />
                      </children>
                   </Pane>
                </children>
             </VBox>
          </left>
          <top>
-            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="97.0" prefWidth="118.0" />
-                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
+                  <Pane prefHeight="100.0" prefWidth="271.0" style="-fx-background-color: #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6;">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="70.0" prefHeight="17.0" prefWidth="164.0" text="Supply Chain Management System" textFill="#242a30">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="23.0" prefHeight="44.0" prefWidth="231.0" text="SUP-Loop " textFill="#242a30">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="52.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" x="11.0" y="24.0">
+                           <image>
+                              <Image url="@../../../logo/logo(Sup-Loop).png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
@@ -75,7 +83,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="overalltableview" layoutX="27.0" layoutY="54.0" onMouseClicked="#selectColumn" prefHeight="651.0" prefWidth="1222.0">
+                  <TableView fx:id="overalltableview" layoutX="24.0" layoutY="21.0" onMouseClicked="#selectColumn" prefHeight="684.0" prefWidth="1225.0">
                      <columns>
                         <TableColumn fx:id="workstationIDcolumn" prefWidth="141.066650390625" text="Workstation ID" />
                         <TableColumn fx:id="materialIDcolumn" prefWidth="158.9332275390625" text="Material ID" />
@@ -84,11 +92,6 @@
                         <TableColumn fx:id="warehouseLabelcolumn" prefWidth="223.9999755859376" text="Warehouse Label" />
                      </columns>
                   </TableView>
-                  <Label layoutX="27.0" layoutY="14.0" prefHeight="32.0" prefWidth="329.0" text="Material Request List">
-                     <font>
-                        <Font name="System Bold" size="22.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
          </center>

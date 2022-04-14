@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class salesOrderListPreview implements Initializable
@@ -34,6 +35,11 @@ public class salesOrderListPreview implements Initializable
     // label
     @FXML private Label salesOrderListLabel;
     @FXML private Label overallJobCardList;
+
+    // menu bar
+    @FXML private Pane overallJobCardListButton;
+    @FXML private Pane logOutButton;
+    @FXML private Pane manageDeliveryButton;
 
     // TableColumn & Table View
     @FXML private TableColumn<salesOrderListArray,String> oderIdColumn;
@@ -63,7 +69,7 @@ public class salesOrderListPreview implements Initializable
     private String salesOrderListQuery =   "SELECT Order_ID, Item_code, Order_quantity, Order_date, Due_date, Status, Shipping_status " +
                                             "FROM sales_order "+
                                             "ORDER BY (regexp_replace(Order_ID,'[^0-9]','')) +0; "; // order by
-    
+
 
     /***************************************** Jump to Overall Job Card List <Action>  ****************************************/  
     public void jumpToOverallJobCard() 
@@ -77,6 +83,21 @@ public class salesOrderListPreview implements Initializable
             e.printStackTrace();
         }    
     }
+
+    /***************************************** Jump to Manage Order <Action>  ****************************************/  
+    public void jumpToManageDelivery() 
+    {
+        try {
+            String fxmlPath = "/fxml/productionDepartment/manageDelivery.fxml";
+            Main jumpToSalesOrderList = new Main();
+            jumpToSalesOrderList.switchScene(fxmlPath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /***************************************** Log Out  <Action>  ****************************************/  
 
     /***************************************** Refresh TableView <Methods>  ****************************************/  
     public void refreshSalesOrderlist() 
@@ -176,6 +197,20 @@ public class salesOrderListPreview implements Initializable
                 
         }
     }    
+
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
+
+    // overall jobcard list entered & exited
+    public void overallJcEntered() {overallJobCardListButton.setStyle("-fx-background-color: #3d454d");}
+    public void overallJcExited() {overallJobCardListButton.setStyle("-fx-background-color: #4b555e");}
+
+    // Manage delivery entered & exited
+    public void manageDeliveryEnter() {manageDeliveryButton.setStyle("-fx-background-color: #3d454d");}
+    public void manageDeliveryExited() {manageDeliveryButton.setStyle("-fx-background-color: #4b555e");}
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

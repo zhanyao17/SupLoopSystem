@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -32,6 +33,10 @@ public class overallJobCardPreview implements Initializable
     // Choices Box
     @FXML private ChoiceBox<String> filterChoices;
 
+    // menu bar
+    @FXML private Pane salesOrderButton;
+    @FXML private Pane logOutButton;
+    @FXML private Pane manageDeliveryButton;
 
 
     // call class
@@ -51,7 +56,7 @@ public class overallJobCardPreview implements Initializable
 
     // define varaible 
     JobCardArray temp;
-    Date lastClickTime;
+    private Date lastClickTime;
 
     // statis variable
     public static boolean inUpdateStatusMode =false;
@@ -89,6 +94,20 @@ public class overallJobCardPreview implements Initializable
         }
     }
 
+    /***************************************** Jump to Manage Order <Action>  ****************************************/  
+    public void jumpToManageDelivery() 
+    {
+        try {
+            String fxmlPath = "/fxml/productionDepartment/manageDelivery.fxml";
+            Main jumpToSalesOrderList = new Main();
+            jumpToSalesOrderList.switchScene(fxmlPath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /***************************************** Log Out  <Action>  ****************************************/  
 
     /***************************************** Show up Update Start Date page <Methods>  ****************************************/  
     public void popUpStartJobPage (String oId, String jId,String opCode, String fxmlPath) 
@@ -176,6 +195,18 @@ public class overallJobCardPreview implements Initializable
         }
     }
 
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
+
+    // sales order list entered & exited
+    public void salesOrderEnter() {salesOrderButton.setStyle("-fx-background-color: #3d454d");}
+    public void salesOrderExited() {salesOrderButton.setStyle("-fx-background-color: #4b555e");}
+
+    // Manage delivery entered & exited
+    public void manageDeliveryEnter() {manageDeliveryButton.setStyle("-fx-background-color: #3d454d");}
+    public void manageDeliveryExited() {manageDeliveryButton.setStyle("-fx-background-color: #4b555e");}
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {

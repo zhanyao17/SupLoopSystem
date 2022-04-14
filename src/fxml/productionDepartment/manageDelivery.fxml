@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,19 +14,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.productionDepartment.salesOrderListPreview">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.productionDepartment.manageDelivery">
    <children>
       <BorderPane prefHeight="840.0" prefWidth="1550.0">
          <left>
             <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff #d1b3ff;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d #3d454d#3d454d;">
+                  <Pane fx:id="salesOrderButton" onMouseClicked="#jumpToSalesOrderList" onMouseEntered="#salesOrderEnter" onMouseExited="#salesOrderExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="93.0" layoutY="32.0" text="Sales Order List" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font></Label>
-                     </children></Pane>
+                        <Label layoutX="93.0" layoutY="32.0" text="Sales Order List" textFill="WHITE" />
+                     </children>
+                  </Pane>
                   <Pane fx:id="overallJobCardListButton" onMouseClicked="#jumpToOverallJobCard" onMouseEntered="#overallJcEntered" onMouseExited="#overallJcExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
                         <Label layoutX="80.0" layoutY="32.0" text="Overall Job Card List" textFill="WHITE">
@@ -34,9 +32,13 @@
                               <Font name="System Bold" size="13.0" />
                            </font></Label>
                      </children></Pane>
-                  <Pane fx:id="manageDeliveryButton" onMouseClicked="#jumpToManageDelivery" onMouseEntered="#manageDeliveryEnter" onMouseExited="#manageDeliveryExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                  <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d #3d454d#3d454d;">
                      <children>
-                        <Label layoutX="90.0" layoutY="31.0" text="Manage Delivery" textFill="WHITE" />
+                        <Label layoutX="90.0" layoutY="31.0" text="Manage Delivery" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                   <Pane prefHeight="434.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
@@ -77,15 +79,14 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f1f2;" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="tableView" layoutX="53.0" layoutY="116.0" onMouseClicked="#selectColumn" prefHeight="611.0" prefWidth="1184.0">
+                  <TableView fx:id="tableView" layoutX="53.0" layoutY="116.0" prefHeight="611.0" prefWidth="1184.0">
                     <columns>
-                      <TableColumn fx:id="oderIdColumn" prefWidth="132.7835693359375" text="Order ID" />
-                        <TableColumn fx:id="itemCodeColumn" prefWidth="132.2164306640625" text="Item Code" />
-                        <TableColumn fx:id="orderQuantityColumn" prefWidth="166.2164306640625" text="Order Quantity" />
-                        <TableColumn fx:id="orderDateColumn" prefWidth="207.4688720703125" text="Order_Date" />
-                        <TableColumn fx:id="dueDateColumn" prefWidth="218.7984619140625" text="Due_Date" />
-                        <TableColumn fx:id="statusColumn" prefWidth="161.2015380859375" text="Status" />
-                        <TableColumn fx:id="orderStatusColumn" prefWidth="164.07470703125" text="Order Status" />
+                      <TableColumn fx:id="oderIdColumn" prefWidth="141.0" text="Order ID" />
+                        <TableColumn fx:id="itemCodeColumn" prefWidth="141.0" text="Item Code" />
+                        <TableColumn fx:id="orderQuantityColumn" prefWidth="175.0" text="Order Quantity" />
+                        <TableColumn fx:id="orderDateColumn" prefWidth="216.0" text="Order_Date" />
+                        <TableColumn fx:id="dueDateColumn" prefWidth="286.0" text="Due_Date" />
+                        <TableColumn fx:id="orderStatusColumn" prefWidth="224.0" text="Order Status" />
                     </columns>
                   </TableView>
                   <AnchorPane layoutX="42.0" layoutY="11.0" prefHeight="58.0" prefWidth="1190.0" style="-fx-background-color: #72808c#72808c #72808c#72808c; -fx-background-radius: 10;">
@@ -93,18 +94,7 @@
                         <TextField fx:id="enterOrderId" layoutX="25.0" layoutY="14.0" onKeyTyped="#searchOrderId" prefHeight="30.0" prefWidth="263.0" promptText="Order ID" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2; -fx-border-color: #ffffff#ffffff #ffffff#ffffff; -fx-background-color: #dde2eb#dde2eb #dde2eb#dde2eb;" />
                      </children>
                   </AnchorPane>
-                  <ChoiceBox fx:id="filterOrderStatus" layoutX="1076.0" layoutY="77.0" prefWidth="150.0" style="-fx-border-radius: 10; -fx-background-color: #dde2eb;" />
-                  <Label layoutX="931.0" layoutY="80.0" text="Filter by Order Status :" textFill="#373839">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <ChoiceBox fx:id="filterStatus" layoutX="720.0" layoutY="77.0" prefWidth="150.0" style="-fx-border-radius: 10; -fx-background-color: #dde2eb;" />
-                  <Label layoutX="610.0" layoutY="80.0" text="Filter by Status:" textFill="#373839">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                  <Button layoutX="1065.0" layoutY="80.0" mnemonicParsing="false" onAction="#delivered" prefHeight="25.0" prefWidth="138.0" style="-fx-background-radius: 10; -fx-background-color: #dde2eb;" text="Delivery" />
                </children></AnchorPane>
          </center>
       </BorderPane>

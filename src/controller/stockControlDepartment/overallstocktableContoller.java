@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.event.ActionEvent;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.OverallstocktableModel;
 import controller.Main;
@@ -43,6 +44,12 @@ public class overallstocktableContoller implements Initializable {
     private TextField keywordTextField;
     @FXML
     private ChoiceBox<String> warehouseCategory;
+
+    // menu bar
+    @FXML private Pane keepTrackPane;
+    @FXML private Pane matRequestPane;
+    @FXML private Pane recycleMatPane;
+    @FXML private Pane logOutButton;
 
     //define variables
     private String productViewQuery =   "SELECT PRM.RM_ID, RM.Raw_material_name, W.material_quantity, W.warehouse_label, PO.Purchase_ID, PO.Order_ID\n" +
@@ -175,6 +182,23 @@ public class overallstocktableContoller implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /***************************************************  Menu bar effect Button <Action>  *************************************************/  // 2 APRIL
+    // logout button entered & Exited
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
+
+    // over stock information entered & exited
+    public void keepTrackEnter() {keepTrackPane.setStyle("-fx-background-color: #3d454d");}
+    public void keepTrackExited() {keepTrackPane.setStyle("-fx-background-color: #4b555e");}
+
+    // Material Request list entered & exited
+    public void matListEnter() {matRequestPane.setStyle("-fx-background-color: #3d454d");}
+    public void matListExited() {matRequestPane.setStyle("-fx-background-color: #4b555e");}
+
+    // Material Request list entered & exited
+    public void recycleMatEnter() {recycleMatPane.setStyle("-fx-background-color: #3d454d");}
+    public void recycleMatExited() {recycleMatPane.setStyle("-fx-background-color: #4b555e");}
     
     @Override
     public void initialize(URL url, ResourceBundle resource){

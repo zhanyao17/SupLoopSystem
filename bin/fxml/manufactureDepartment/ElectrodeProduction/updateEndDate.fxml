@@ -10,9 +10,9 @@
 
 <AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="502.0" style="-fx-background-color: #f0f1f2;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.manufactureDepartment.ElectrodeProduction.updateEndDate">
    <children>
-      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="480.0" style="-fx-background-color: #dde2eb; -fx-background-radius: 10;">
+      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="480.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c; -fx-background-radius: 10;">
          <children>
-            <Label layoutX="14.0" layoutY="7.0" prefHeight="26.0" prefWidth="217.0" text="Job Card Details" textFill="#0c0c68">
+            <Label layoutX="14.0" layoutY="7.0" prefHeight="26.0" prefWidth="217.0" text="Job Card Details" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -51,8 +51,8 @@
             </Label>
          </children>
       </GridPane>
-      <Button layoutX="61.0" layoutY="338.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="25.0" prefWidth="186.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c; -fx-font-weight: bold;" text="Back" textFill="WHITE" />
-      <Button layoutX="257.0" layoutY="338.0" mnemonicParsing="false" onAction="#completeTask" prefHeight="25.0" prefWidth="186.0" style="-fx-background-radius: 10; -fx-background-color: #00008c#00008c; -fx-font-weight: bold;" text="Complete Task" textFill="WHITE" />
+      <Button layoutX="61.0" layoutY="338.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="25.0" prefWidth="186.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e; -fx-font-weight: bold;" text="Back" textFill="WHITE" />
+      <Button layoutX="257.0" layoutY="338.0" mnemonicParsing="false" onAction="#completeTask" prefHeight="25.0" prefWidth="186.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e; -fx-font-weight: bold;" text="Complete Task" textFill="WHITE" />
       <Label alignment="CENTER" layoutX="-1.0" layoutY="69.0" prefHeight="40.0" prefWidth="504.0" style="-fx-font-weight: bold; -fx-background-color: #f5c998#f5c998;" text="PLEASE MAKE SURE THE ACTUAL QUANTITY HAVE REACH THE REQUIRED QUANTITY ! ! !">
          <font>
             <Font size="12.0" />
