@@ -91,7 +91,7 @@ public class materialTransfer_recycle implements Initializable
         resetTableButton.setDisable(false);
         alertLabel.setText("");
         try {
-            if ((rRawmaterial.isString(enterQuantity.getText()))||(enterQuantity.getText()==null)) {
+            if ((rRawmaterial.isString(enterQuantity.getText()))||(enterQuantity.getText()==null)||(rmChoicesBox.getValue()==null)) {
                 enterQuantity.setText("");
                 rmChoicesBox.setValue("");
                 alertLabel.setText("Invalid Input !!");
@@ -106,7 +106,7 @@ public class materialTransfer_recycle implements Initializable
             tableView.setItems(newRM);
             enterQuantity.setText("");
             rmChoicesBox.setValue("");
-            alertLabel.setText("");
+            // alertLabel.setText("");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -168,6 +168,9 @@ public class materialTransfer_recycle implements Initializable
         // Clear textfield & choicesBox
         enterQuantity.setText("");
         rmChoicesBox.setValue("");
+
+        // reset label
+        alertLabel.setText("");
 
         // Clear table view
         tableView.getItems().clear();

@@ -131,19 +131,26 @@ public class overallstocktableContoller implements Initializable {
     }
 
     public void filterLabel(ActionEvent event){
+        
         if(warehouseCategory.getValue().equals("All")){
             showAllWarehouseDetails(productViewQuery);
             overalltableview.setItems(overallstocktableModelsObservableList);
+            keywordTextField.setText(null);
         }else{
             filterwarehouseLabel(warehouseCategory.getValue(), productViewQuery);
             overalltableview.setItems(overallstocktableModelsObservableList);
-        }
+            keywordTextField.setText(null);
+        }    
     }
 
     public void searchOrderID(KeyEvent event){
         try{
-            filterOrderID(keywordTextField.getText(), productViewQuery);
-            overalltableview.setItems(overallstocktableModelsObservableList);
+        if (keywordTextField==null) {/* ignore action */}
+            else 
+            {
+                filterOrderID(keywordTextField.getText(), productViewQuery);
+                overalltableview.setItems(overallstocktableModelsObservableList);
+            }            
         }catch(Exception e) {
             e.printStackTrace();
         }

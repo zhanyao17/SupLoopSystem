@@ -144,9 +144,11 @@ public class jobCardPreview_CellAssembly implements Initializable
         {
             eleJobCard.selectEleJobCard(overallEleJobCardQuery); // show all job card for specifc workstation
             tableView.setItems(eleJobCard.getJobEleCard());
+            enterJobCardId.setText(null);
         } else {
             eleJobCard.filterEleJobCard(filterChoices.getValue(),overallEleJobCardQuery);
             tableView.setItems(eleJobCard.getJobEleCard());
+            enterJobCardId.setText(null);
         }
     }
     
@@ -154,8 +156,13 @@ public class jobCardPreview_CellAssembly implements Initializable
     public void searchJobCardId(KeyEvent event) 
     {
         try {
-            eleJobCard.searchJobCard(enterJobCardId.getText(),overallEleJobCardQuery);
-            tableView.setItems(eleJobCard.getJobEleCard());    
+            if (enterJobCardId==null) {/* ignore action */}
+                
+            else {
+                eleJobCard.searchJobCard(enterJobCardId.getText(),overallEleJobCardQuery);
+                tableView.setItems(eleJobCard.getJobEleCard()); 
+            }
+               
         } catch (Exception e) {
             e.printStackTrace();
         }
