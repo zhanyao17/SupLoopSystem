@@ -6,7 +6,20 @@ Welcome to the VS Code Java world. Here is a guideline to help you get started t
 
 The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
+## User Interface
+
+- System Manager
+- Sales Department
+- Manufacture Department
+- Stock Control Deparment
+- Recycle Department
+
+
+- `src`: the folder to maintain sources included (base, controller, fxml)
+    - `base` : Main function used (arrayFile + Defined Methods)
+    - `controller` : Contains all the controller to handle each of used scene page in fxml (listed in fxml Sub-Folder)
+    - `fxml` : Contains all the design code for all the scene page
+
 - `lib`: the folder to maintain dependencies
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.

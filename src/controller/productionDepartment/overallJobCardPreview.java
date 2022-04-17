@@ -140,9 +140,13 @@ public class overallJobCardPreview implements Initializable
         {
             eleJobCard.selectEleJobCard(overallEleJobCardQuery);
             tableView.setItems(eleJobCard.getJobEleCard());
+            enterOderId.setText(null);
+            enterJobCardId.setText(null);
         } else {
             eleJobCard.filterEleJobCard(filterChoices.getValue(),overallEleJobCardQuery);
             tableView.setItems(eleJobCard.getJobEleCard());
+            enterOderId.setText(null);
+            enterJobCardId.setText(null);
         }
     }
     
@@ -150,8 +154,14 @@ public class overallJobCardPreview implements Initializable
     public void searchJobCardId(KeyEvent event) 
     {
         try {
-            eleJobCard.searchJobCard(enterJobCardId.getText(),overallEleJobCardQuery);
-            tableView.setItems(eleJobCard.getJobEleCard());    
+            if (enterJobCardId==null) {/* ignore action*/} 
+            else 
+            {
+                enterOderId.setText(null);
+                eleJobCard.searchJobCard(enterJobCardId.getText(),overallEleJobCardQuery);
+                tableView.setItems(eleJobCard.getJobEleCard());        
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -161,8 +171,14 @@ public class overallJobCardPreview implements Initializable
     public void searchOrderId(KeyEvent event) 
     {
         try {
-            eleJobCard.searchOrderId(enterOderId.getText(), overallEleJobCardQuery);
-            tableView.setItems(eleJobCard.getJobEleCard());
+            if (enterOderId==null) {/* ignore action */} 
+            else 
+            {
+                enterJobCardId.setText(null);
+                eleJobCard.searchOrderId(enterOderId.getText(), overallEleJobCardQuery);
+                tableView.setItems(eleJobCard.getJobEleCard());      
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }    

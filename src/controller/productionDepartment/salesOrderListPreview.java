@@ -1,6 +1,7 @@
 package controller.productionDepartment;
 
 import java.net.URL;
+import java.text.BreakIterator;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -111,13 +112,23 @@ public class salesOrderListPreview implements Initializable
     public void getFilterStatus(ActionEvent evnet) 
     {
         if (filterStatus.getValue().equals("All")) 
-        {
-            viewOrder.viewOverallSalesOrder(salesOrderListQuery);    
-            tableView.setItems(viewOrder.getSalesOrderList());
-        } else {
-            viewOrder.filterStatus(filterStatus.getValue(), salesOrderListQuery);
-            tableView.setItems(viewOrder.getSalesOrderList());
-        }    
+            {
+                viewOrder.viewOverallSalesOrder(salesOrderListQuery);    
+                tableView.setItems(viewOrder.getSalesOrderList());
+                filterOrderStatus.setValue("");
+                enterOrderId.setText(null);
+            } else {
+                if (!filterStatus.getValue().equals("")) 
+                {
+                    filterOrderStatus.setValue("");
+                    enterOrderId.setText(null);
+                    viewOrder.filterStatus(filterStatus.getValue(), salesOrderListQuery);
+                    tableView.setItems(viewOrder.getSalesOrderList());    
+                } else {
+                    /* ignore action */
+                }
+            }   
+        
     }
 
     /***************************************** Filter Order_Status <Action>  ****************************************/  
@@ -125,13 +136,22 @@ public class salesOrderListPreview implements Initializable
     public void getFilterOrderStatus(ActionEvent event) 
     {
         if (filterOrderStatus.getValue().equals("All")) 
-        {
-            viewOrder.viewOverallSalesOrder(salesOrderListQuery);    
-            tableView.setItems(viewOrder.getSalesOrderList());     
-        } else {
-            viewOrder.filterOrderStatus(filterOrderStatus.getValue(), salesOrderListQuery);
-            tableView.setItems(viewOrder.getSalesOrderList());
-        }    
+            {
+                viewOrder.viewOverallSalesOrder(salesOrderListQuery);    
+                tableView.setItems(viewOrder.getSalesOrderList());    
+                filterStatus.setValue("");
+                enterOrderId.setText(null);
+            } else {
+                if (!filterOrderStatus.getValue().equals("")) {
+                    filterStatus.setValue("");
+                    enterOrderId.setText(null);
+                    viewOrder.filterOrderStatus(filterOrderStatus.getValue(), salesOrderListQuery);
+                    tableView.setItems(viewOrder.getSalesOrderList()); 
+                } else {
+                    /* ignore action */
+                }
+            } 
+        
     }
     
     /***************************************** Search Order ID Text Field <Action>  ****************************************/  
@@ -139,8 +159,12 @@ public class salesOrderListPreview implements Initializable
     public void searchOrderId(KeyEvent event) 
     {
         try {
-            viewOrder.searchOrderIdSalesList(enterOrderId.getText(), salesOrderListQuery);
-            tableView.setItems(viewOrder.getSalesOrderList());
+            if (enterOrderId==null) {/* ignore action */} 
+            else {
+                viewOrder.searchOrderIdSalesList(enterOrderId.getText(), salesOrderListQuery);
+                tableView.setItems(viewOrder.getSalesOrderList());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }    
@@ -219,7 +243,7 @@ public class salesOrderListPreview implements Initializable
 
 
         // choices box - filterOrderStatus 
-        filterOrderStatus.setValue("All");
+        filterOrderStatus.setValue("");
         filterOrderStatus.getItems().addAll("All","Delivered","Completed","In_complete","Pending");
         filterOrderStatus.setOnAction(this :: getFilterOrderStatus);
 
