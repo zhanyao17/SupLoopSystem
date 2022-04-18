@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.salesOrderManagementController">
+   <children>
+      <BorderPane prefHeight="840.0" prefWidth="1550.0">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="97.0" prefWidth="118.0" />
+                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab style="-fx-background-color: #666699; -fx-font-weight: bold; -fx-font-fill: #FFFFFF;" text="     Sales Order     ">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="6.0" layoutY="89.0" prefHeight="623.0" prefWidth="1264.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+                              <Button layoutX="990.0" layoutY="118.0" mnemonicParsing="false" onAction="#addNewOrder" text="Add new Order" />
+                              <TableView fx:id="salesOrderTable" layoutX="14.0" layoutY="147.0" onMouseClicked="#getOrderTableClick" prefHeight="562.0" prefWidth="1234.0">
+                                <columns>
+                                    <TableColumn fx:id="invoiceIDCol" prefWidth="67.99993896484375" text="Invoice ID" />
+                                  <TableColumn fx:id="orderIDCol" prefWidth="72.79995727539062" text="Order ID" />
+                                  <TableColumn fx:id="itemCodeCol" prefWidth="65.60006713867188" text="Item Code" />
+                                    <TableColumn fx:id="quantityCol" prefWidth="75.0" text="Quantity" />
+                                    <TableColumn fx:id="orderDateCol" prefWidth="75.0" text="Order Date" />
+                                    <TableColumn fx:id="shippingDateCol" prefWidth="115.73345947265625" text="Shipping Date" />
+                                    <TableColumn fx:id="shippingAddressCol" prefWidth="455.2000732421875" text="Shipping Address" />
+                                    <TableColumn fx:id="postcodeCol" prefWidth="108.0" text="Postcode" />
+                                    <TableColumn fx:id="shippingStatusCol" prefWidth="104.2666015625" text="Shipping Status" />
+                                    <TableColumn fx:id="statusCol" prefWidth="90.13330078125" text="status" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="searchOrderText" layoutX="55.0" layoutY="118.0" onKeyTyped="#loadOrderTableData" prefHeight="26.0" prefWidth="534.0" promptText="Type something to search" />
+                              <Button layoutX="1094.0" layoutY="118.0" mnemonicParsing="false" onAction="#generatePurchaseOrder" prefHeight="26.0" prefWidth="154.0" text="Generate purchase order" />
+                              <ComboBox fx:id="shippingStatusCombo" layoutX="651.0" layoutY="118.0" onAction="#loadOrderTableData" prefWidth="150.0" />
+                              <ComboBox fx:id="statusCombo" layoutX="823.0" layoutY="118.0" onAction="#loadOrderTableData" prefWidth="150.0" />
+                              <Label layoutX="652.0" layoutY="102.0" text="Filter Shipping Status by:" />
+                              <Label layoutX="825.0" layoutY="102.0" text="Filter Status by:" />
+                              <Label layoutX="14.0" layoutY="123.0" text="Search:" />
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="564.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icon/icons8-search-30.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="-2.0" prefHeight="78.0" prefWidth="1280.0" style="-fx-background-color: #666699;">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="15.0" text="Sales Order" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="33.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+                <Tab style="-fx-background-color: #666699; -fx-font-weight: bold; -fx-font-size: 12;" text="     Sales Invoice     ">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="5.0" layoutY="99.0" prefHeight="610.0" prefWidth="1264.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+                              <TableView fx:id="invoiceTable" layoutX="14.0" layoutY="147.0" onMouseClicked="#getInvoiceTableClick" prefHeight="562.0" prefWidth="1234.0">
+                                 <columns>
+                                    <TableColumn fx:id="salesInvoiceIDCol" prefWidth="102.39999389648438" text="Invoice ID" />
+                                    <TableColumn fx:id="invoiceDateCol" prefWidth="124.79998779296875" text="Order Date" />
+                                    <TableColumn fx:id="emailCol" prefWidth="238.13330078125" text="Customer Email" />
+                                    <TableColumn fx:id="nameCol" prefWidth="229.5999755859375" text="Customer Name" />
+                                    <TableColumn fx:id="invoiceStatusCol" prefWidth="146.4000244140625" text="Sales Status" />
+                                    <TableColumn fx:id="totalCostCol" prefWidth="136.800048828125" text="Total Cost" />
+                                    <TableColumn fx:id="progressPercentCol" prefWidth="91.199951171875" text="Progress %" />
+                                    <TableColumn fx:id="invoiceProgressCol" prefWidth="162.4000244140625" text="Workload" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="searchInvoiceText" layoutX="55.0" layoutY="118.0" onKeyTyped="#loadInvoiceTableData" prefHeight="26.0" prefWidth="534.0" promptText="Type something to search" />
+                              <Label layoutX="14.0" layoutY="123.0" text="Search:" />
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="564.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icon/icons8-search-30.png" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="596.0" layoutY="119.0" mnemonicParsing="false" onAction="#deleteOrder" text="Delete" />
+                              <Pane layoutX="-2.0" prefHeight="78.0" prefWidth="1280.0" style="-fx-background-color: #666699;">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="15.0" text="Sales Invoice" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Black" size="33.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <left>
+            <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane onMouseClicked="#dashboardClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="88.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Dashboard" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#leadManagementClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="57.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Lead Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#productManagementClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="44.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Product Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#rawMaterialClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="22.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Raw Material Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#supplierClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="42.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Supplier Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#salesOrderClick" opacity="0.9" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="88.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Sales Order" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#purchaseOrderClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="69.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Purchase Order" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="89.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
+                  <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="103.0" layoutY="24.0" style="-fx-font-weight: bold;" text="Log out" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

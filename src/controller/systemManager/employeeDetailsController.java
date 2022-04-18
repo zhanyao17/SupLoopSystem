@@ -66,7 +66,8 @@ public class employeeDetailsController implements Initializable
     //define statement
     private String employeeListQuery =  "SELECT e.Emp_ID, e.Emp_name,e.Emp_contact, e.Dept_ID,e.Emp_pass, d.Dept_name " +
                                         "from employees e " +
-                                        "INNER JOIN department d on d.Dept_ID = e.Dept_ID;";
+                                        "INNER JOIN department d on d.Dept_ID = e.Dept_ID "+
+                                        "WHERE e.Employees_status='Active';";
 
     private String employeeListQuery1 =  "SELECT e.Emp_ID, e.Emp_name,e.Emp_contact, e.Dept_ID, d.Dept_name " +
                                             "from employees e " +
@@ -324,7 +325,8 @@ public class employeeDetailsController implements Initializable
         // validate is there any data selected
         if (selectedEmp!=null) 
         {
-            String dltEmpId ="DELETE FROM employees WHERE Emp_ID = "+"'"+selectedEmp.getEmployeeId()+"' ;"; 
+            // String dltEmpId ="DELETE FROM employees WHERE Emp_ID = "+"'"+selectedEmp.getEmployeeId()+"' ;"; 
+            String dltEmpId = "UPDATE employees SET Employees_status = 'Close' WHERE (Emp_ID = "+"'"+selectedEmp.getEmployeeId()+"');";
             insertData(dltEmpId);
             warningInformation();
         }

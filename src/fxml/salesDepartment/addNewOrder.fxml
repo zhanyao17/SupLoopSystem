@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.addNewOrderController">
+   <children>
+      <BorderPane prefHeight="840.0" prefWidth="1550.0">
+         <left>
+            <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="743.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="97.0" prefWidth="118.0" />
+                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </top>
+         <right>
+            <Pane prefHeight="743.0" prefWidth="272.0" style="-fx-background-color: #00004d;" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutX="95.0" layoutY="1.0" prefHeight="666.0" prefWidth="810.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+                           <children>
+                              <TextArea fx:id="locationText" layoutX="105.0" layoutY="463.0" prefHeight="84.0" prefWidth="200.0" promptText="Address" style="-fx-background-radius: 10;" wrapText="true" />
+                              <Label layoutX="103.0" layoutY="160.0" text="Add Item:">
+                                 <font>
+                                    <Font name="Arial Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="103.0" layoutY="440.0" text="Shipping Details:">
+                                 <font>
+                                    <Font name="Arial Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="104.0" layoutY="381.0" mnemonicParsing="false" onAction="#addPurchaseItem" prefHeight="26.0" prefWidth="129.0" style="-fx-background-color: #b3ecff; -fx-background-radius: 10;" text="Add New Item" />
+                              <Button layoutX="235.0" layoutY="381.0" mnemonicParsing="false" onAction="#removePurchaseItem" prefHeight="26.0" prefWidth="118.0" style="-fx-background-radius: 10; -fx-background-color: #ff9999;" text="Remove Item" />
+                              <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="206.0" layoutY="381.0" onMouseClicked="#addPurchaseItem" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icon/add.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="328.0" layoutY="381.0" onMouseClicked="#removePurchaseItem" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icon/minus.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="postcodeText" editable="false" layoutX="108.0" layoutY="566.0" promptText="Postcode" style="-fx-background-radius: 10;" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="199.0" layoutY="57.0" text="Select Lead:">
+                           <font>
+                              <Font name="Arial Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="customerName" layoutX="198.0" layoutY="78.0" prefHeight="26.0" prefWidth="266.0" />
+                        <TableView fx:id="itemTable" layoutX="198.0" layoutY="181.0" onMouseClicked="#getItemTableClick" prefHeight="200.0" prefWidth="592.0">
+                          <columns>
+                            <TableColumn fx:id="itemCodeCol" prefWidth="75.0" text="Item Code" />
+                            <TableColumn fx:id="itemNameCol" prefWidth="188.79998779296875" text="Item Name" />
+                              <TableColumn fx:id="itemPriceCol" prefWidth="104.0" text="Item per Price" />
+                              <TableColumn fx:id="itemAmountCol" prefWidth="220.79998779296875" text="Amount" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="465.0" layoutY="78.0" mnemonicParsing="false" onAction="#selectLead" text="search customer" />
+                        <RadioButton fx:id="newAddressRadio" layoutX="410.0" layoutY="495.0" mnemonicParsing="false" onAction="#getAddress" text="New Address">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="address" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="defaultAddressRadio" layoutX="410.0" layoutY="464.0" mnemonicParsing="false" onAction="#getAddress" text="Default Address" toggleGroup="$address" />
+                        <TextField fx:id="totalText" editable="false" layoutX="589.0" layoutY="381.0" prefHeight="26.0" prefWidth="202.0" style="-fx-background-radius: 10;" />
+                        <Label layoutX="537.0" layoutY="384.0" text="Total: RM" />
+                        <DatePicker fx:id="shippingDatePicker" layoutX="611.0" layoutY="548.0" onAction="#getShippingDate" style="-fx-background-radius: 10;" />
+                        <Text layoutX="611.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated Date:" />
+                        <TextField fx:id="estimatedDateText" editable="false" layoutX="610.0" layoutY="481.0" style="-fx-background-radius: 10;" />
+                        <Label layoutX="610.0" layoutY="530.0" text="Shipping date" />
+                        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="695.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icon/icons8-help-50.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="helpLabel" layoutX="695.0" layoutY="461.0" prefHeight="20.0" prefWidth="18.0" />
+                     </children>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <Pane prefHeight="73.0" prefWidth="1006.0" style="-fx-background-color: #6666cc;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button layoutX="918.0" layoutY="25.0" mnemonicParsing="false" onAction="#cancelOrder" style="-fx-background-radius: 10;" text="Cancel" />
+                        <Button layoutX="841.0" layoutY="25.0" mnemonicParsing="false" onAction="#submitOrder" style="-fx-background-radius: 10;" text="Submit" />
+                        <Label layoutX="14.0" layoutY="16.0" text="Add New Order" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </top>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

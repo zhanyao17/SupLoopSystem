@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="scenePane" prefHeight="422.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.selectOperationController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="508.0" style="-fx-background-color: #000080;" />
+      <TableView fx:id="selectOperationTable" layoutX="5.0" layoutY="77.0" onMouseClicked="#getTableClick" prefHeight="250.0" prefWidth="495.0">
+        <columns>
+          <TableColumn fx:id="opCodeCol" prefWidth="99.99999618530273" text="Operation Code" />
+          <TableColumn fx:id="opNameCol" prefWidth="239.20001983642578" text="Operation Name" />
+            <TableColumn fx:id="opCostCol" prefWidth="152.0" text="Operation Cost per hour" />
+        </columns>
+      </TableView>
+      <Button layoutX="393.0" layoutY="383.0" mnemonicParsing="false" onAction="#addOperationNeeded" text="Add" />
+      <Button layoutX="442.0" layoutY="383.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <TextField fx:id="opTimeText" layoutX="24.0" layoutY="357.0" promptText="E.g. 30" />
+      <Label layoutX="25.0" layoutY="340.0" text="Operation Time in Minutes: " />
+      <Label fx:id="opTimeLabel" layoutX="24.0" layoutY="383.0" textFill="RED" />
+   </children>
+</AnchorPane>

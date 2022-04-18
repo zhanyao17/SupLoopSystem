@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scenePane" prefHeight="629.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.generatePurchaseOrderController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="1005.0" style="-fx-background-color: #000080;" />
+      <TableView fx:id="purchaseOrderTable" layoutX="7.0" layoutY="166.0" onMouseClicked="#getPurchaseOrderClick" prefHeight="350.0" prefWidth="992.0">
+        <columns>
+          <TableColumn fx:id="rmIDCol" prefWidth="72.7999906539917" text="Material ID" />
+          <TableColumn fx:id="rmNameCol" prefWidth="71.20001220703125" text="Name" />
+            <TableColumn fx:id="rmCostCol" prefWidth="62.399993896484375" text="Cost" />
+            <TableColumn fx:id="quantityRequiredCol" prefWidth="140.0000762939453" text="Quantity Required (KG)" />
+            <TableColumn fx:id="stockCol" prefWidth="132.0" text="Quantity in Stock (KG)" />
+            <TableColumn fx:id="purchaseQuantityCol" prefWidth="141.60003662109375" text="Purchase Quantity (KG)" />
+            <TableColumn fx:id="subTotalCol" prefWidth="120.53338623046875" text="Sub-Total" />
+            <TableColumn fx:id="supplierNameCol" prefWidth="248.26666259765625" text="Supplier Name" />
+        </columns>
+      </TableView>
+      <TextField fx:id="totalCostText" layoutX="810.0" layoutY="516.0" prefHeight="26.0" prefWidth="188.0" />
+      <Label layoutX="719.0" layoutY="519.0" text="Total Cost: RM">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="839.0" layoutY="590.0" mnemonicParsing="false" onAction="#submitPurchaseOrder" text="Submit" />
+      <Button layoutX="946.0" layoutY="590.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <TextField fx:id="orderIDText" editable="false" layoutX="53.0" layoutY="113.0" />
+      <Label layoutX="53.0" layoutY="96.0" text="Order ID" />
+      <TextField fx:id="itemCodeText" editable="false" layoutX="244.0" layoutY="113.0" />
+      <Label layoutX="244.0" layoutY="96.0" text="Item Code:" />
+      <Label fx:id="submitErrorLabel" layoutX="715.0" layoutY="558.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

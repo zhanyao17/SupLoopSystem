@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.purchaseOrderManagementController">
+   <children>
+      <BorderPane prefHeight="840.0" prefWidth="1550.0">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="97.0" prefWidth="118.0" />
+                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="8.0" layoutY="108.0" prefHeight="630.0" prefWidth="1262.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+                  <TableView fx:id="purchaseOrderTable" layoutX="19.0" layoutY="162.0" prefHeight="562.0" prefWidth="1234.0">
+                     <columns>
+                        <TableColumn fx:id="purchaseIDCol" prefWidth="94.39996337890625" text="Purchase ID" />
+                        <TableColumn fx:id="orderIDCol" prefWidth="117.33328247070312" text="Order ID" />
+                        <TableColumn fx:id="supplierNameCol" prefWidth="227.46670532226562" text="Supplier Name" />
+                        <TableColumn fx:id="rawMaterialCol" prefWidth="220.5333251953125" text="Raw Material" />
+                        <TableColumn fx:id="purchaseDateCol" prefWidth="228.0001220703125" text="Purchase Date" />
+                        <TableColumn fx:id="purchaseQuantityCol" prefWidth="177.86663818359375" text="Purchase Quantity (KG)" />
+                        <TableColumn fx:id="totalCostCol" prefWidth="160.0001220703125" text="Total Cost" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="searchText" layoutX="60.0" layoutY="133.0" onKeyTyped="#loadPurchaseTableData" prefHeight="26.0" prefWidth="534.0" promptText="Type something to search" />
+                  <Label layoutX="19.0" layoutY="138.0" text="Search:" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="569.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8-search-30.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="-2.0" prefHeight="78.0" prefWidth="1280.0" style="-fx-background-color: #666699;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="15.0" text="Purchase Order" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane onMouseClicked="#dashboardClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="88.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Dashboard" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#leadManagementClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="57.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Lead Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#productManagementClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="44.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Product Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#rawMaterialClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="22.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Raw Material Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#supplierClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="42.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Supplier Management" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#salesOrderClick" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="88.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Sales Order" textFill="#969696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#purchaseOrderClick" opacity="0.9" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="69.0" layoutY="28.0" style="-fx-font-weight: bold;" text="Purchase Order" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="89.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
+                  <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #00004d;">
+                     <children>
+                        <Label layoutX="103.0" layoutY="24.0" style="-fx-font-weight: bold;" text="Log out" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

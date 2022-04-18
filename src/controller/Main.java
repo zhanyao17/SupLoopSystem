@@ -1,6 +1,7 @@
 package controller;
 
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,9 +17,11 @@ public class Main extends Application {
     public void start(Stage primaryStage){
         try {
             this.primaryStage = primaryStage;
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/systemManager/employeeDetails.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/salesDepartment/dashboard.fxml"));
             Scene scene= new Scene(root);
             primaryStage.setScene(scene);
+            // primaryStage.setResizable(false);
+            // primaryStage.setMaximized(true);
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

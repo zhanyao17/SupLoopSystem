@@ -185,7 +185,7 @@ public class addNewEmpController implements Initializable
                 String deptId = getDeptId(chooseDepartment.getValue());
                 String empName= enterEmpName.getText();
                 String empPassword = enterPassword.getText();
-                insertData(" INSERT INTO employees VALUES ('"+empId+"', '"+deptId+"', '"+empPassword+"', '"+fixCon+"', '"+empName+"')");
+                insertData(" INSERT INTO employees VALUES ('"+empId+"', '"+deptId+"', '"+empPassword+"', '"+fixCon+"', '"+empName+"', "+"'Active');");
                 alertMessage.setText("");
                 Cancel();
                 warningInformation();
