@@ -11,7 +11,19 @@
 
 <AnchorPane fx:id="scenePane" prefHeight="629.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.generatePurchaseOrderController">
    <children>
-      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="1005.0" style="-fx-background-color: #000080;" />
+      <Pane layoutX="-7.0" layoutY="-8.0" prefHeight="78.0" prefWidth="1021.0" style="-fx-background-color: #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="34.0" layoutY="52.0" prefHeight="17.0" prefWidth="164.0" text="Supply Chain Management System" textFill="#242a30">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="15.0" prefHeight="35.0" prefWidth="221.0" text="SUP-Loop " textFill="#242a30">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children></Pane>
       <TableView fx:id="purchaseOrderTable" layoutX="7.0" layoutY="166.0" onMouseClicked="#getPurchaseOrderClick" prefHeight="350.0" prefWidth="992.0">
         <columns>
           <TableColumn fx:id="rmIDCol" prefWidth="72.7999906539917" text="Material ID" />
@@ -24,18 +36,22 @@
             <TableColumn fx:id="supplierNameCol" prefWidth="248.26666259765625" text="Supplier Name" />
         </columns>
       </TableView>
-      <TextField fx:id="totalCostText" layoutX="810.0" layoutY="516.0" prefHeight="26.0" prefWidth="188.0" />
-      <Label layoutX="719.0" layoutY="519.0" text="Total Cost: RM">
+      <TextField fx:id="totalCostText" layoutX="803.0" layoutY="524.0" prefHeight="26.0" prefWidth="188.0" style="-fx-background-color: #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb; -fx-background-radius: 10;" />
+      <Label layoutX="698.0" layoutY="528.0" text="Total Cost: RM">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="839.0" layoutY="590.0" mnemonicParsing="false" onAction="#submitPurchaseOrder" text="Submit" />
-      <Button layoutX="946.0" layoutY="590.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
-      <TextField fx:id="orderIDText" editable="false" layoutX="53.0" layoutY="113.0" />
-      <Label layoutX="53.0" layoutY="96.0" text="Order ID" />
-      <TextField fx:id="itemCodeText" editable="false" layoutX="244.0" layoutY="113.0" />
-      <Label layoutX="244.0" layoutY="96.0" text="Item Code:" />
+      <Button layoutX="676.0" layoutY="575.0" mnemonicParsing="false" onAction="#submitPurchaseOrder" prefHeight="25.0" prefWidth="152.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Submit" textFill="WHITE" />
+      <Button layoutX="846.0" layoutY="575.0" mnemonicParsing="false" onAction="#cancel" prefWidth="152.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Cancel" textFill="WHITE" />
+      <AnchorPane layoutX="31.0" layoutY="84.0" prefHeight="58.0" prefWidth="945.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="315.0" layoutY="21.0" text="Item Code :" textFill="WHITE" />
+            <TextField fx:id="itemCodeText" editable="false" layoutX="83.0" layoutY="16.0" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb; -fx-background-radius: 10; -fx-border-image-width: 2; -fx-border-radius: 10; -fx-border-color: #ffffff #ffffff;" />
+            <Label layoutX="22.0" layoutY="21.0" text="Order ID : " textFill="WHITE" />
+            <TextField fx:id="orderIDText" editable="false" layoutX="385.0" layoutY="16.0" prefHeight="30.0" prefWidth="164.0" style="-fx-background-color: #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb #dde2eb#dde2eb; -fx-background-radius: 10; -fx-border-image-width: 2; -fx-border-radius: 10; -fx-border-color: #ffffff #ffffff;" />
+         </children>
+      </AnchorPane>
       <Label fx:id="submitErrorLabel" layoutX="715.0" layoutY="558.0" textFill="RED">
          <font>
             <Font size="13.0" />

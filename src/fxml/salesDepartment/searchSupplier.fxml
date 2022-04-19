@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="scenePane" prefHeight="449.0" prefWidth="502.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.searchSupplierController">
    <children>
-      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="598.0" style="-fx-background-color: #000080;">
+      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="598.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c;">
          <children>
             <Label layoutX="22.0" layoutY="19.0" text="Add Supplier" textFill="WHITE">
                <font>
@@ -19,8 +19,8 @@
                </font>
             </Label>
          </children></Pane>
-      <Button layoutX="481.0" layoutY="415.0" mnemonicParsing="false" onAction="#applySearch" prefHeight="26.0" prefWidth="51.0" text="Apply" />
-      <Button layoutX="541.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Button layoutX="453.0" layoutY="416.0" mnemonicParsing="false" onAction="#applySearch" prefHeight="26.0" prefWidth="57.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Apply" textFill="WHITE" />
+      <Button layoutX="527.0" layoutY="416.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="57.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Cancel" textFill="WHITE" />
       <TableView fx:id="supplierTable" layoutX="7.0" layoutY="107.0" onMouseClicked="#getSupplierTableClick" prefHeight="302.0" prefWidth="586.0">
         <columns>
           <TableColumn fx:id="supplierIDCol" prefWidth="76.0" text="Supplier ID" />

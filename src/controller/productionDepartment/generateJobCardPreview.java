@@ -1,5 +1,11 @@
 package controller.productionDepartment;
 
+//Programmer Name : Lin Zhan Yao TP061252
+//Program Name: generateJobCardPreview.java
+//Description: Handle Generate Job Card Action
+//First Written on: 5 April 2022
+//Edited on: 15 April 2022
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

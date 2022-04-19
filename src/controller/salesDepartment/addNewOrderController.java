@@ -216,8 +216,6 @@ public class addNewOrderController implements Initializable {
             total += item.getAmount()*item.getItemPrice();
         }
         totalText.setText(String.format("%.2f",total));
-        System.out.println(total);
-        System.out.println(totalText.getText());
     }
 
     //calculate minimum manufacture time required for this order
@@ -294,7 +292,6 @@ public class addNewOrderController implements Initializable {
                     }else{
                         orderID = "O1";
                     }
-                    System.out.println(orderID);
                     statement = connection.prepareStatement("INSERT INTO sales_order VALUES(?,?,?,?,?,?,?,?,?,?)");
                     statement.setString(1,orderID);
                     statement.setString(2,item.getItemCode());

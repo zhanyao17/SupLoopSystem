@@ -1,5 +1,11 @@
 package controller.productionDepartment;
 
+//Programmer Name : Lin Zhan Yao TP061252
+//Program Name: overallJobCardPreview.java
+//Description: To Allow Production Manager Generate Job Card
+//First Written on: 5 April 2022
+//Edited on: 15 April 2022
+
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;

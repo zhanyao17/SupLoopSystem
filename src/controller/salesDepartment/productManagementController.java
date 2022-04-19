@@ -83,7 +83,7 @@ public class productManagementController extends dashboardController implements 
         }catch (Exception e){
 
         }
-
+        itemImageCol.setStyle("-fx-alignment: CENTER;");
 
         loadTableData();
     }

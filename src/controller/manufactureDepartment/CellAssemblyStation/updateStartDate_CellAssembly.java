@@ -1,5 +1,12 @@
 package controller.manufactureDepartment.CellAssemblyStation;
 
+//Programmer Name : Lin Zhan Yao TP061252
+//Program Name: updateStartDate_CellAssembly.java
+//Description: Handle Update Start Date In Job Card
+//First Written on: 31 MARCH 2022
+//Edited on: 10 April 2022
+
+
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;

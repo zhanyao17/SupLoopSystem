@@ -42,7 +42,7 @@
                      <children>
                         <ImageView fitHeight="52.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" x="11.0" y="24.0">
                            <image>
-                              <Image url="@../../../../logo/logo(Sup-Loop).png" />
+                              <Image url="@../../../logo/logo(Sup-Loop).png" />
                            </image>
                         </ImageView>
                         <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="70.0" prefHeight="17.0" prefWidth="164.0" text="Supply Chain Management System" textFill="#242a30">

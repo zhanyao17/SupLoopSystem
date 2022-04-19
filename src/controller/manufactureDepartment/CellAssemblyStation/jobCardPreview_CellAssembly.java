@@ -1,5 +1,12 @@
 package controller.manufactureDepartment.CellAssemblyStation;
 
+//Programmer Name : Lin Zhan Yao TP061252
+//Program Name: jobCardPreview_CellAssembly.java
+//Description: To Allow Cell Assembly Workers update the job card status
+//First Written on: 31 MARCH 2022
+//Edited on: 10 April 2022
+
+
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;

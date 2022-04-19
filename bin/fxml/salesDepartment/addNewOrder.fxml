@@ -25,25 +25,37 @@
          <left>
             <VBox prefHeight="596.0" prefWidth="272.0" style="-fx-background-color: #d1b3ff;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="743.0" prefWidth="272.0" style="-fx-background-color: #00004d;" />
+                  <Pane prefHeight="743.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
                </children>
             </VBox>
          </left>
          <top>
-            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #000033;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="100.0" prefWidth="1572.0" style="-fx-background-color: #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6 #b6c7d6#b6c7d6;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="97.0" prefWidth="118.0" />
-                  <Label prefHeight="100.0" prefWidth="1433.0" style="-fx-font-weight: bold;" text="Sup-Loop System" textFill="WHITE">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
+                  <Pane prefHeight="100.0" prefWidth="245.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="70.0" prefHeight="17.0" prefWidth="164.0" text="Supply Chain Management System" textFill="#242a30">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="23.0" prefHeight="44.0" prefWidth="231.0" text="SUP-Loop " textFill="#242a30">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="52.0" fitWidth="51.0" layoutX="11.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../logo/logo(Sup-Loop).png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
          </top>
          <right>
-            <Pane prefHeight="743.0" prefWidth="272.0" style="-fx-background-color: #00004d;" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="743.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" BorderPane.alignment="CENTER" />
          </right>
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -115,10 +127,10 @@
                   </AnchorPane>
                </center>
                <top>
-                  <Pane prefHeight="73.0" prefWidth="1006.0" style="-fx-background-color: #6666cc;" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="73.0" prefWidth="1006.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button layoutX="918.0" layoutY="25.0" mnemonicParsing="false" onAction="#cancelOrder" style="-fx-background-radius: 10;" text="Cancel" />
-                        <Button layoutX="841.0" layoutY="25.0" mnemonicParsing="false" onAction="#submitOrder" style="-fx-background-radius: 10;" text="Submit" />
+                        <Button layoutX="863.0" layoutY="25.0" mnemonicParsing="false" onAction="#cancelOrder" prefHeight="25.0" prefWidth="93.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Cancel" textFill="WHITE" />
+                        <Button layoutX="752.0" layoutY="25.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="25.0" prefWidth="93.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Submit" textFill="WHITE" />
                         <Label layoutX="14.0" layoutY="16.0" text="Add New Order" textFill="WHITE">
                            <font>
                               <Font name="Arial Black" size="28.0" />

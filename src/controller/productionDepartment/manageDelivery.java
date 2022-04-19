@@ -1,5 +1,11 @@
 package controller.productionDepartment;
 
+//Programmer Name : Lin Zhan Yao TP061252
+//Program Name: manageDelivery.java
+//Description: To Allow Production Manager Update Delivery Status
+//First Written on: 5 April 2022
+//Edited on: 15 April 2022
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;

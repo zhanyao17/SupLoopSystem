@@ -65,7 +65,7 @@
                         </Label>
                         <ImageView fitHeight="52.0" fitWidth="51.0" layoutX="11.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../logo/logo(Sup-Loop).png" />
+                              <Image url="@../../logo/logo(Sup-Loop).png" />
                            </image>
                         </ImageView>
                      </children></Pane>

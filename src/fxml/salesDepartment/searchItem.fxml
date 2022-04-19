@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="scenePane" prefHeight="449.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.salesDepartment.searchItemController">
    <children>
-      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="464.0" style="-fx-background-color: #000080;">
+      <Pane layoutY="-2.0" prefHeight="66.0" prefWidth="464.0" style="-fx-background-color: #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c #72808c#72808c;">
          <children>
             <Label layoutX="14.0" layoutY="20.0" text="Add Item" textFill="WHITE">
                <font>
@@ -19,10 +19,10 @@
                </font>
             </Label>
          </children></Pane>
-      <Button layoutX="336.0" layoutY="413.0" mnemonicParsing="false" onAction="#applyItem" prefHeight="26.0" prefWidth="51.0" text="Apply" />
-      <Button layoutX="398.0" layoutY="414.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
-      <TextField fx:id="itemAmountText" layoutX="14.0" layoutY="362.0" promptText="Amount" style="-fx-background-radius: 10;" />
-      <TableView fx:id="itemTable" layoutX="14.0" layoutY="104.0" onMouseClicked="#getTableClick" prefHeight="257.0" prefWidth="435.0">
+      <Button layoutX="297.0" layoutY="402.0" mnemonicParsing="false" onAction="#applyItem" prefHeight="26.0" prefWidth="57.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Apply" textFill="WHITE" />
+      <Button layoutX="371.0" layoutY="403.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="65.0" style="-fx-background-radius: 10; -fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" text="Cancel" textFill="WHITE" />
+      <TextField fx:id="itemAmountText" layoutX="33.0" layoutY="403.0" promptText="Amount" style="-fx-background-radius: 10;" />
+      <TableView fx:id="itemTable" layoutX="14.0" layoutY="119.0" onMouseClicked="#getTableClick" prefHeight="257.0" prefWidth="435.0">
          <columns>
             <TableColumn fx:id="itemCodeCol" prefWidth="82.933349609375" text="Item Code" />
             <TableColumn fx:id="itemNameCol" prefWidth="235.20001220703125" text="Item Name" />

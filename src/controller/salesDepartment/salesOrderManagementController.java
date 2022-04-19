@@ -105,7 +105,7 @@ public class salesOrderManagementController extends dashboardController implemen
     private ObservableList<SalesInvoice> salesInvoiceList = FXCollections.observableArrayList();
 
     private final ObservableList<String> shippingStatusFilter = FXCollections.observableArrayList(
-        "Show All", "Delivered", "In_complete", "Pending"
+        "Show All", "Delivered","Completed", "In_complete", "Pending"
     );
 
     private final ObservableList<String> statusFilter = FXCollections.observableArrayList(
