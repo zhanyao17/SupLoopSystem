@@ -6,6 +6,7 @@ package controller.salesDepartment;
 //First Written on: 5 April 2022
 //Edited on: 18 April 2022
 
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -49,7 +50,7 @@ public class supplierManagementController extends dashboardController implements
     private TextField searchBarText, spNameText, spContactText, spMailText;
 
     @FXML
-    private Label titleLabel;
+    private Label titleLabel, usernameLabel;
 
     @FXML
     private Button addButton, editButton;
@@ -78,6 +79,7 @@ public class supplierManagementController extends dashboardController implements
         spContactCol.setCellValueFactory(new PropertyValueFactory<Supplier, String>("supplierContact"));
         spStatusCol.setCellValueFactory(new PropertyValueFactory<Supplier, String>("status"));
         loadTableData();
+        usernameLabel.setText(loginController.employeeName);
     }
     //get check box value
     public void getCheckBox(){

@@ -94,7 +94,7 @@ public class showMaterialRequired implements Initializable
                                         "WHERE po.Order_ID = "+"'"+oI+"'"+";";
     
         
-        if (!jobCardData.isReady(rawMaterialQuantity)) {
+        if (!jobCardData.isReady(rawMaterialQuantity,"NR")) {
             if (jobCardData.isRawMaterialNull(jobCardRawMaterial)) {
                 noticeLabel.setText("*** RAW MATERIAL IS NOT READY YET ***");
                 addInformation.setText("This Job Card Did Not Required Any Material !!");

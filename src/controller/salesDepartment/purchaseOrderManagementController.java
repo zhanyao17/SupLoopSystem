@@ -6,10 +6,12 @@ package controller.salesDepartment;
 //First Written on: 13 April 2022
 //Edited on: 18 April 2022
 
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -54,6 +56,9 @@ public class purchaseOrderManagementController extends dashboardController imple
     @FXML
     private TextField searchText;
 
+    @FXML
+    private Label usernameLabel;
+
     private ObservableList<PurchaseInvoice> purchaseList = FXCollections.observableArrayList();
 
     private Connection connection = null;
@@ -72,6 +77,7 @@ public class purchaseOrderManagementController extends dashboardController imple
         purchaseQuantityCol.setCellValueFactory(new PropertyValueFactory<PurchaseInvoice, Float>("purchaseQuantity"));
         totalCostCol.setCellValueFactory(new PropertyValueFactory<PurchaseInvoice, Float>("totalCost"));
         loadPurchaseTableData();
+        usernameLabel.setText(loginController.employeeName);
     }
 
     //load data into table
@@ -115,6 +121,7 @@ public class purchaseOrderManagementController extends dashboardController imple
         }finally {
             closeConnection();
         }
+
     }
 
     //close the connection to database

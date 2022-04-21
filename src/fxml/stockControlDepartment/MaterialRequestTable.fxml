@@ -20,36 +20,45 @@
                <children>
                   <Pane fx:id="stockInfoPane" onMouseClicked="#jumpToOverall" onMouseEntered="#stockInfoEnter" onMouseExited="#stockInfoExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="68.0" layoutY="33.0" text="Overall Stock Information" textFill="WHITE">
+                        <Label layoutX="57.0" layoutY="32.0" text="Overall Stock Information" textFill="WHITE">
                            <font>
-                              <Font name="System Bold" size="13.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
                   <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d #3d454d#3d454d;">
                      <children>
-                        <Label layoutX="79.0" layoutY="33.0" text="Material Request List" textFill="WHITE">
+                        <Label layoutX="70.0" layoutY="32.0" text="Material Request List" textFill="WHITE">
                            <font>
-                              <Font name="System Bold" size="13.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
                   <Pane fx:id="keepTrackPane" onMouseClicked="#jumpToKeepTrack" onMouseEntered="#keepTrackEnter" onMouseExited="#keepTrackExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="56.0" layoutY="33.0" text="Keep Track Stock Information" textFill="WHITE" />
+                        <Label layoutX="43.0" layoutY="32.0" text="Keep Track Stock Information" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children>
                   </Pane>
                   <Pane fx:id="recycleMatPane" onMouseClicked="#jumpToRecycleRaw" onMouseEntered="#recycleMatEnter" onMouseExited="#recycleMatExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="74.0" layoutY="33.0" text="Recycled Raw Material" textFill="WHITE" />
+                        <Label layoutX="65.0" layoutY="32.0" text="Recycled Raw Material" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children>
                   </Pane>
                   <Pane prefHeight="331.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
-                  <Pane fx:id="logOutButton" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                  <Pane fx:id="logOutButton" onMouseClicked="#logout" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="115.0" layoutY="33.0" text="Log out" textFill="WHITE" />
+                        <Label layoutX="112.0" layoutY="32.0" text="Log out" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children>
                   </Pane>
                </children>
@@ -76,7 +85,19 @@
                            </image>
                         </ImageView>
                      </children></Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Pane prefHeight="100.0" prefWidth="1282.0">
+                     <children>
+                        <Label fx:id="usernameLabel" layoutX="1028.0" layoutY="37.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="1190.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icon/avatar.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                </children>
             </HBox>
          </top>

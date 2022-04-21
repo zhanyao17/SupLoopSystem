@@ -89,6 +89,7 @@ public class generatePurchaseOrderController implements Initializable {
         orderIDText.setText(passOrder.getOrderID());
         itemCodeText.setText(passOrder.getItemCode());
         loadPurchaseOrderTable();
+
     }
     //close database connection
     public void closeConnection(){

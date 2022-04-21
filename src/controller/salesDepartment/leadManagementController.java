@@ -6,6 +6,7 @@ package controller.salesDepartment;
 //First Written on: 28 March 2022
 //Edited on: 18 April 2022
 
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -60,6 +61,9 @@ public class leadManagementController extends dashboardController implements Ini
     @FXML
     private CheckBox showAllCheckBox;
 
+    @FXML
+    private Label usernameLabel;
+
     private String filterStatus = "'Active'";
     private ObservableList<Customer> customerList = FXCollections.observableArrayList();
 
@@ -81,11 +85,11 @@ public class leadManagementController extends dashboardController implements Ini
         postcodeCol.setCellValueFactory(new PropertyValueFactory<Customer, String>("postcode"));
         try{
             leadStatusCol.setCellValueFactory(new PropertyValueFactory<Customer, String>("status"));
+            usernameLabel.setText(loginController.employeeName);
         }catch (Exception e){
 
         }
         loadTableData();
-
     }
 
     //get check box value

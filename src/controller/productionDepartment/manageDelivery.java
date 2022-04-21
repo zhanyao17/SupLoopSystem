@@ -13,10 +13,13 @@ import java.util.ResourceBundle;
 import base.manufactureDepartment.ArrayList.salesOrderListArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
 import controller.Main;
+import controller.loginPage.loginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,16 +33,19 @@ public class manageDelivery implements Initializable{
     // Text field
     @FXML private TextField enterOrderId;
 
-
-
     // label
     @FXML private Label salesOrderListLabel;
     @FXML private Label overallJobCardList;
+    @FXML private Label warningMessage;
+    @FXML private Label usernameLabel;
 
     // menu bar
     @FXML private Pane overallJobCardListButton;
     @FXML private Pane salesOrderButton;
     @FXML private Pane logOutButton;
+
+    // button
+    @FXML private Button deliveryButton;
 
     // TableColumn & Table View
     @FXML private TableColumn<salesOrderListArray,String> oderIdColumn;
@@ -54,6 +60,9 @@ public class manageDelivery implements Initializable{
 
     // Create a class
     Manufacture_Main deliverOrder = new Manufacture_Main();
+
+    // Define main class
+    private Main m = new Main();
 
     /***************************************** Define Query <Variables> ****************************************/  
     
@@ -87,6 +96,18 @@ public class manageDelivery implements Initializable{
             e.printStackTrace();
         }
     }
+
+    /***************************************** Log Out  <Action>  ****************************************/  
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
+    
     /***************************************** Alert Information <Mehtods>   ****************************************/  
     public void alertMesssage() 
     {
@@ -110,9 +131,8 @@ public class manageDelivery implements Initializable{
         {
             String updateDeliveryStatus = "UPDATE sales_order SET Shipping_status = 'Delivered' WHERE Order_ID = " +"'"+selectedRow.getOrder_Id()+"' ;";
             deliverOrder.insertData(updateDeliveryStatus);
+            alertMesssage();
         }
-        
-        alertMesssage();
         // refresh table view
         refreshTable();
     }
@@ -155,6 +175,7 @@ public class manageDelivery implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
+        warningMessage.setText("");
         oderIdColumn.setCellValueFactory(new PropertyValueFactory<salesOrderListArray,String>("Order_Id"));
         itemCodeColumn.setCellValueFactory(new PropertyValueFactory<salesOrderListArray,String>("Item_Code"));
         orderQuantityColumn.setCellValueFactory(new PropertyValueFactory<salesOrderListArray,String>("Order_Quantity"));
@@ -164,6 +185,16 @@ public class manageDelivery implements Initializable{
         
         deliverOrder.viewOverallSalesOrder(compleOrderQuery);
         tableView.setItems(deliverOrder.getSalesOrderList());
+
+        // restrict button
+        if ((deliverOrder.getSalesOrderList()).isEmpty()) 
+        {
+            deliveryButton.setDisable(true);
+            warningMessage.setText("Currently Did Not Have Order Is Completed !!");;
+        }
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
     }
 
 }

@@ -157,7 +157,7 @@ public class updateStartDate implements Initializable
     
         
         // Validation on Material Request Action
-        if (!jobCardData.isReady(rawMaterialQuantity)) {
+        if (!jobCardData.isReady(rawMaterialQuantity,"NR")) {
             // ifelse - determine the job card required any raw material or not
             if (jobCardData.isRawMaterialNull(jobCardRawMaterial)) {
                 noticeLabel.setText("*** RAW MATERIAL IS NOT READY YET ***");

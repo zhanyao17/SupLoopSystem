@@ -13,12 +13,16 @@ import java.util.ResourceBundle;
 
 import base.recycleDepartment.ArrayList.recycledRMArray;
 import base.recycleDepartment.Methods.recycle_Main;
+import controller.Main;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -40,6 +44,7 @@ public class materialTransfer_recycle implements Initializable
 
     // label
     @FXML private Label alertLabel;
+    @FXML private Label usernameLabel;
 
     // Button
     @FXML private Button resetTableButton;
@@ -63,6 +68,8 @@ public class materialTransfer_recycle implements Initializable
     // drop shawdow effect
     DropShadow shadow = new DropShadow();
 
+    // Define main class
+    private Main m = new Main();
 
     // Statement
     private String rawMaterialQuery = "SELECT rw.RM_ID, rw.Raw_material_name from raw_material rw;";
@@ -72,6 +79,17 @@ public class materialTransfer_recycle implements Initializable
     
     // define observable list
     private ObservableList <recycledRMArray> newRM =  FXCollections.observableArrayList();;
+
+    /***************************************** Log Out  <Action>  ****************************************/  
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
 
     /***************************************************  Detect duplicate <Methods>  *************************************************/  // 3 APRIL
     public void checkDuplicates() throws SQLException
@@ -220,6 +238,7 @@ public class materialTransfer_recycle implements Initializable
         rmNameColumn.setCellValueFactory(new PropertyValueFactory<recycledRMArray,String>("rmName"));
         materialQColumn.setCellValueFactory(new PropertyValueFactory<recycledRMArray,String>("material_quantity"));
 
-
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
     }
 }

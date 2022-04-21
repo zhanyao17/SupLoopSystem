@@ -23,16 +23,19 @@
                     <children>
                         <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d #3d454d#3d454d;">
                             <children>
-                                <Label layoutX="89.0" layoutY="32.0" text="Employee Details" textFill="WHITE">
+                                <Label layoutX="82.0" layoutY="31.0" text="Employee Details" textFill="WHITE">
                                     <font>
-                                        <Font name="System Bold" size="13.0" />
+                                        <Font name="System Bold" size="15.0" />
                                     </font></Label>
                             </children></Pane>
                         <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
                         <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
-                        <Pane prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                        <Pane onMouseClicked="#logout" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                             <children>
-                                <Label layoutX="115.0" layoutY="28.0" text="Log out" textFill="WHITE" />
+                                <Label layoutX="112.0" layoutY="27.0" text="Log out" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                             </children>
                         </Pane>
                     </children>
@@ -59,8 +62,19 @@
                            </image>
                         </ImageView>
                             </children></Pane>
-                        <Pane prefHeight="200.0" prefWidth="200.0" />
-                        <AnchorPane prefHeight="100.0" prefWidth="1137.0" />
+                        <Pane prefHeight="100.0" prefWidth="1284.0">
+                     <children>
+                        <Label fx:id="usernameLabel" layoutX="1028.0" layoutY="37.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="1190.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icon/avatar.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                     </children>
                 </HBox>
             </top>

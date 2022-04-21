@@ -12,13 +12,17 @@ import java.util.ResourceBundle;
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.notAssignMatModel;
 import controller.Main;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,6 +35,12 @@ public class notAssignMatController implements Initializable
 
     // button
     @FXML private Button resetButton;
+
+    // Label
+    @FXML private Label usernameLabel;
+
+    // Define main class
+    private Main m = new Main();
 
     // tableView & column
     @FXML private TableView<notAssignMatModel> tableView;
@@ -60,6 +70,15 @@ public class notAssignMatController implements Initializable
     private ObservableList<notAssignMatModel> notAssignRaw;
 
 
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
 
     /***************************************************  Add all NA label rawmaterial <Methods>  *************************************************/  // 2 APRIL 
     public void showAllNotAssignDetails(String totNotAssignQuery) throws SQLException
@@ -214,6 +233,9 @@ public class notAssignMatController implements Initializable
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
 
     }
     

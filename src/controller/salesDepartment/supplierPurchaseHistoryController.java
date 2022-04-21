@@ -6,10 +6,12 @@ package controller.salesDepartment;
 //First Written on: 6 April 2022
 //Edited on: 18 April 2022
 
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -65,6 +67,9 @@ public class supplierPurchaseHistoryController extends dashboardController imple
     @FXML
     private TextField searchPurchaseText, supplierIDText, supplierNameText,supplierMailText, supplierContactText;
 
+    @FXML
+    private Label usernameLabel;
+
     public static Supplier passSupplier;
 
     private ObservableList<PurchaseInvoice> purchaseInvoiceList = FXCollections.observableArrayList();
@@ -96,6 +101,7 @@ public class supplierPurchaseHistoryController extends dashboardController imple
         supplierMailText.setText(passSupplier.getSupplierEmail());
         loadPurchaseInvoiceTable();
         loadSupplyRMTable();
+        usernameLabel.setText(loginController.employeeName);
     }
     //close connection to database
     public void closeConnection(){

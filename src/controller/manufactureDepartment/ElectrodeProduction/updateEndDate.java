@@ -34,6 +34,7 @@ public class updateEndDate
 
     // define varialbes
     private String jCardId;
+    private String orderId;
 
     // define window varialbe
     private Stage stage;
@@ -43,9 +44,10 @@ public class updateEndDate
     Manufacture_Main updateStatus2 = new Manufacture_Main();
 
     /***************************************** Get Data from other scene <Mehtods>   ****************************************/  
-    public void previeweJobCardDetails(String jId, String rQ) 
+    public void previeweJobCardDetails(String jId, String rQ,String oId) 
     {
         jCardId = jId;
+        orderId=oId;
         jobCardId.setText(jId);
         rQuantity.setText(rQ+" qty");
         // Restrict the window event button
@@ -81,6 +83,7 @@ public class updateEndDate
     /***************************************** Complete Job Button <Action>   ****************************************/  
     public void completeTask(ActionEvent event) throws IOException 
     {
+        
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss") ;
         String currentDateTime = format.format(date);

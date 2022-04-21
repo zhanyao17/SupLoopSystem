@@ -12,13 +12,18 @@ import java.util.ResourceBundle;
 
 import base.manufactureDepartment.ArrayList.JobCardArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
+import controller.Main;
+import controller.loginPage.loginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -38,6 +43,9 @@ public class jobCardPreview_Packing implements Initializable
 
     // menu bar
     @FXML private Pane logOutButton;
+
+    // Label
+    @FXML private Label usernameLabel;
 
     // call class
     Manufacture_Main eleJobCard = new Manufacture_Main();
@@ -62,8 +70,10 @@ public class jobCardPreview_Packing implements Initializable
     public static boolean inUpdateStatusMode =false;
 
     // define window varialbe
-
     private Parent root;
+
+    // Define main class
+    private Main m = new Main();
 
 
     /***************************************** Define Query <Variables> ****************************************/  
@@ -81,7 +91,15 @@ public class jobCardPreview_Packing implements Initializable
 
 
     /***************************************** Log Out  <Action>  ****************************************/  
-
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
     /***************************************** Refresh TableView <Methods>  ****************************************/  
     public void refreshJobCardPreview() 
     {
@@ -238,6 +256,9 @@ public class jobCardPreview_Packing implements Initializable
         colourStatusColumn.setCellValueFactory(new PropertyValueFactory<JobCardArray,Circle>("colourStatus"));
 
         colourStatusColumn.setStyle("-fx-alignment: CENTER;");
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
 
         tableView.setItems(eleJobCard.getJobEleCard());
 

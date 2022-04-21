@@ -10,6 +10,7 @@ import JDBC_Connectors.DBConnectors;
 import base.salesDepartment.ArrayLists.RawMaterial;
 import base.salesDepartment.ArrayLists.Supplier;
 import base.salesDepartment.Method.publicMethod;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -65,7 +66,7 @@ public class materialManagementController extends dashboardController implements
     private Button editButton, addButton;
 
     @FXML
-    private Label editModeLabel;
+    private Label editModeLabel,usernameLabel;
 
     private String editRM_ID, filterStatus = "'Active'";
 
@@ -97,6 +98,7 @@ public class materialManagementController extends dashboardController implements
         supplierNameCol.setCellValueFactory(new PropertyValueFactory<Supplier, String>("supplierName"));
         searchSupplierList.clear();
         loadTableData();
+        usernameLabel.setText(loginController.employeeName);
 
     }
     //get check box value

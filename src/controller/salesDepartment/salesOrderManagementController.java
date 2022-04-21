@@ -7,6 +7,7 @@ package controller.salesDepartment;
 //First Written on: 8 April 2022
 //Edited on: 18 April 2022
 
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -98,6 +99,9 @@ public class salesOrderManagementController extends dashboardController implemen
     private TextField searchOrderText, searchInvoiceText;
 
     @FXML
+    private Label usernameLabel;
+
+    @FXML
     private ComboBox<String> shippingStatusCombo, statusCombo;
 
     private ObservableList<SalesOrder> salesOrderList = FXCollections.observableArrayList();
@@ -156,6 +160,7 @@ public class salesOrderManagementController extends dashboardController implemen
         statusCombo.setValue("Show All");
         loadOrderTableData();
         loadInvoiceTableData();
+        usernameLabel.setText(loginController.employeeName);
     }
 
     //get selected row in table

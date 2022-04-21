@@ -6,6 +6,7 @@ package controller.salesDepartment;
 //First Written on: 7 April 2022
 //Edited on: 18 April 2022
 
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

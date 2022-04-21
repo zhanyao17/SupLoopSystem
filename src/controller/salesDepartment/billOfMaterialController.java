@@ -11,6 +11,7 @@ import base.salesDepartment.ArrayLists.Item;
 import base.salesDepartment.ArrayLists.Operation;
 import base.salesDepartment.ArrayLists.RawMaterial;
 import controller.Main;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -71,7 +72,7 @@ public class billOfMaterialController implements Initializable {
     private TableColumn<Operation, Integer> opTimeCol;
 
     @FXML
-    private Label titleLabel;
+    private Label titleLabel, usernameLabel;
 
     @FXML
     private TextField itemNameText, itemPriceText, rmCostText, operatingCostText, totalCostText;
@@ -125,6 +126,7 @@ public class billOfMaterialController implements Initializable {
         opCostCol.setCellValueFactory(new PropertyValueFactory<Operation, Float>("operationCost"));
         opTimeCol.setCellValueFactory(new PropertyValueFactory<Operation, Integer>("operationTime"));
 
+        usernameLabel.setText(loginController.employeeName);
         //fill in item's data to all field
         if(productEditMode){
             titleLabel.setText("Bill of Material - "+ passItem.getItemCode());

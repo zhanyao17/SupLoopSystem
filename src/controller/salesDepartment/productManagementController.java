@@ -11,6 +11,7 @@ import base.salesDepartment.ArrayLists.Item;
 import base.salesDepartment.ArrayLists.Operation;
 import base.salesDepartment.ArrayLists.RawMaterial;
 import controller.Main;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -55,6 +56,9 @@ public class productManagementController extends dashboardController implements 
     @FXML
     private CheckBox showAllCheckBox;
 
+    @FXML
+    private Label usernameLabel;
+
     private String filterStatus = "'Active'";
 
     private InputStream inputStream;
@@ -80,11 +84,11 @@ public class productManagementController extends dashboardController implements 
         try{
             itemStatusCol.setCellValueFactory(new PropertyValueFactory<Item, String>("status"));
             itemImageCol.setCellValueFactory(new PropertyValueFactory<Item, ImageView>("itemImage"));
+            itemImageCol.setStyle("-fx-alignment: CENTER;");
+            usernameLabel.setText(loginController.employeeName);
         }catch (Exception e){
 
         }
-        itemImageCol.setStyle("-fx-alignment: CENTER;");
-
         loadTableData();
     }
     //get check box value
@@ -247,6 +251,7 @@ public class productManagementController extends dashboardController implements 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Edit product");
             alert.setHeaderText("Please select a item in table to edit!");
+            alert.show();
         }
     }
     //delete item record in database

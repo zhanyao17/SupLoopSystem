@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.KeepTrackTableModel;
 import controller.Main;
+import controller.loginPage.loginController;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -56,6 +57,12 @@ public class KeepTrackTableController implements Initializable {
     public static boolean inUpdateStatusMode =false;
     private Parent root;
 
+     // Define main class
+     private Main m = new Main();
+
+    // Label
+    @FXML private Label usernameLabel;
+
     private ObservableList<KeepTrackTableModel> KeepTrackTableModelObservableList = FXCollections.observableArrayList();
 
 
@@ -66,6 +73,19 @@ public class KeepTrackTableController implements Initializable {
                         "INNER JOIN purchase_order PO on PRM.Purchase_ID = PO.Purchase_ID "+
                         "Where W.warehouse_label = 'NR'";
 
+    
+    /***************************************** Log Out  <Action>  ****************************************/  
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
+    
+    
     public void filterOrderID(String orderID, String showOrderIDQuery)
     {
         try {
@@ -278,5 +298,9 @@ public class KeepTrackTableController implements Initializable {
 
         showAllNRRaw(q1);
         overalltableview.setItems(KeepTrackTableModelObservableList);
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
+
     }
 }

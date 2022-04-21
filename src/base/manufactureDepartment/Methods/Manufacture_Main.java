@@ -142,30 +142,6 @@ public class Manufacture_Main
         }    
     }
 
-
-    /*****************************************  Check Whether Can Generate Job Card Or Not Function  ***********************************/  // 31 MARCH
-    // public boolean canGenerateJobCard(String salesOrderListQuery) // required query with Order ID
-    // {
-
-    //     try {
-    //         DBConnectors demo = new DBConnectors();
-    //         Connection con = demo.getConnection(); 
-    //         // Obervable list
-    //         jobEleCard = FXCollections.observableArrayList();
-    //         ResultSet rs = con.createStatement().executeQuery(salesOrderListQuery);
-    //         while (rs.next()) {
-    //             if (rs.getString(1).equals("Ready")) // change afterwareds ##
-    //             {
-    //                 canGenerated = true;
-    //             } else {
-    //                 canGenerated = false;
-    //             }
-    //         }
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    //     return canGenerated;
-    // }
     
     /*****************************************  Add New Job Card To Table Function ***********************************/  // 31 MARCH
     public void showGenerateJobCardTable(String requiredOperation, String totJcId) 
@@ -336,12 +312,9 @@ public class Manufacture_Main
                 {
                     rQ = rs.getString("Order_quantity");
                     break;
-                } else {
-                    
-                }    
+                } else {}    
             }
             con.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -423,7 +396,7 @@ public class Manufacture_Main
     }
 
     /**************************************** Check Required Raw Material Reached Or Not Function  *************************************/  // 28 MARCH
-    public boolean isReady(String queyr){
+    public boolean isReady(String queyr, String status){
         try {
             DBConnectors demo = new DBConnectors();
             Connection con = demo.getConnection(); 
@@ -434,7 +407,7 @@ public class Manufacture_Main
                 if (rs.next()==false) {
                     break;   
                 }else{
-                    if (rs.getString("warehouse_label").equals("NR")){
+                    if (rs.getString("warehouse_label").equals(status)){
                         testing = false;
                         break;
                     }

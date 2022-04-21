@@ -2,6 +2,8 @@ package controller.systemManager;
 
 import JDBC_Connectors.DBConnectors;
 import base.systemManager.arrayList.employeeDetailsArray;
+import controller.Main;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,6 +40,9 @@ public class employeeDetailsController implements Initializable
     //reset button
     @FXML private Button resetButton;
 
+    // Label
+    @FXML private Label usernameLabel;
+
     //table view and column
     @FXML private TableColumn<employeeDetailsArray,String> employeeIdColumn;
     @FXML private TableColumn<employeeDetailsArray,String> employeeNameColumn;
@@ -63,6 +68,9 @@ public class employeeDetailsController implements Initializable
     // define static variables
     public static boolean inSelectMode = false;
 
+    // Define main class
+    private Main m = new Main();
+
     //define statement
     private String employeeListQuery =  "SELECT e.Emp_ID, e.Emp_name,e.Emp_contact, e.Dept_ID,e.Emp_pass, d.Dept_name " +
                                         "from employees e " +
@@ -74,6 +82,16 @@ public class employeeDetailsController implements Initializable
                                              "INNER JOIN department d on d.Dept_ID = e.Dept_ID " +
                                             "ORDER BY (regexp_replace(e.Emp_ID,'[^0-9]','')) +0 DESC LIMIT 1;";
 
+
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
 
     /***************************************** Show All Employee details <Methods>  ****************************************/  
     public void showEmployeeList(String employeeListQuery) throws SQLException
@@ -395,5 +413,8 @@ public class employeeDetailsController implements Initializable
         departmentNameColumn.setCellValueFactory(new PropertyValueFactory<employeeDetailsArray,String>("departmentName"));
 
         tableView.setItems(empList);
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
     }
 }

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -13,6 +14,7 @@ import javafx.scene.layout.Pane;
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.MaterialRequestTableModel;
 import controller.Main;
+import controller.loginPage.loginController;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -44,6 +46,13 @@ public class MaterialRequestTableController implements Initializable {
     @FXML private Pane recycleMatPane;
     @FXML private Pane logOutButton;
 
+
+    // Label
+    @FXML private Label usernameLabel;
+
+    // Define main class
+    private Main m = new Main();
+
     // define varaible
     private MaterialRequestTableModel temp;
     private Date lastClickTime;
@@ -54,6 +63,16 @@ public class MaterialRequestTableController implements Initializable {
                         "INNER JOIN purchase_warehouse pw on pw.Warehouse_ID = w.Warehouse_ID " +
                         "INNER JOIN purchase_order po on po.Purchase_ID = pw.Purchase_ID INNER JOIN purchase_rm pr on pr.Purchase_ID = po.Purchase_ID " +
                         "INNER JOIN raw_material r on r.RM_ID = pr.RM_ID;";
+
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
 
     public void showAllMaterialRequestDetails(String q2) {
         try {
@@ -195,6 +214,9 @@ public class MaterialRequestTableController implements Initializable {
 
         showAllMaterialRequestDetails(q2);
         overalltableview.setItems(MaterialRequestTableModelObservableList);
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
     }
 }
 

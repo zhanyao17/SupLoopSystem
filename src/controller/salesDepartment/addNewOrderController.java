@@ -9,6 +9,7 @@ package controller.salesDepartment;
 import base.salesDepartment.ArrayLists.Customer;
 import base.salesDepartment.ArrayLists.Item;
 import controller.Main;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -60,7 +61,7 @@ public class addNewOrderController implements Initializable {
     private DatePicker shippingDatePicker;
 
     @FXML
-    private Label helpLabel;
+    private Label helpLabel, usernameLabel;
 
     public static ObservableList<Item> purchaseItemList = FXCollections.observableArrayList();
 
@@ -84,6 +85,7 @@ public class addNewOrderController implements Initializable {
         itemPriceCol.setCellValueFactory(new PropertyValueFactory<Item, Float>("itemPrice"));
         itemAmountCol.setCellValueFactory(new PropertyValueFactory<Item, Integer>("amount"));
 
+        usernameLabel.setText(loginController.employeeName);
         //setup help tips
         final Tooltip helpTip = new Tooltip();
         helpTip.setText("Estimated date is the minimum date required to complete this order");

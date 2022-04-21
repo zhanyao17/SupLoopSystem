@@ -4,7 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -16,6 +19,7 @@ import javafx.scene.layout.Pane;
 import JDBC_Connectors.DBConnectors;
 import base.stockControlDepartment.ArrayList.OverallstocktableModel;
 import controller.Main;
+import controller.loginPage.loginController;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -51,6 +55,12 @@ public class overallstocktableContoller implements Initializable {
     @FXML private Pane recycleMatPane;
     @FXML private Pane logOutButton;
 
+    // Label
+    @FXML private Label usernameLabel;
+
+    // Define main class
+    private Main m = new Main();
+
     //define variables
     private String productViewQuery =   "SELECT PRM.RM_ID, RM.Raw_material_name, W.material_quantity, W.warehouse_label, PO.Purchase_ID, PO.Order_ID\n" +
                                         "FROM purchase_rm PRM INNER JOIN raw_material RM on PRM.RM_ID = RM.RM_ID\n" +
@@ -61,6 +71,17 @@ public class overallstocktableContoller implements Initializable {
 
     ObservableList<OverallstocktableModel> overallstocktableModelsObservableList = FXCollections.observableArrayList();
 
+    /***************************************** Log Out  <Action>  ****************************************/  
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
+    
     public void filterOrderID(String orderID, String showOrderIDQuery)
     {
         try {
@@ -223,6 +244,8 @@ public class overallstocktableContoller implements Initializable {
 
             showAllWarehouseDetails(productViewQuery);
             overalltableview.setItems(overallstocktableModelsObservableList);
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
     }
 }
 

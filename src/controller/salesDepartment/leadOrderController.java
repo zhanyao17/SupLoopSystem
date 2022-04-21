@@ -9,6 +9,7 @@ package controller.salesDepartment;
 import JDBC_Connectors.DBConnectors;
 import base.salesDepartment.ArrayLists.Customer;
 import base.salesDepartment.ArrayLists.SalesOrder;
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,10 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -53,6 +51,9 @@ public class leadOrderController extends dashboardController implements Initiali
     private TableColumn<SalesOrder, Float> totalCostCol;
 
     @FXML
+    private Label usernameLabel;
+
+    @FXML
     private TextField searchText, leadNameText;
 
     public static Customer passLead = null;
@@ -79,7 +80,7 @@ public class leadOrderController extends dashboardController implements Initiali
         shippingDateCol.setCellValueFactory(new PropertyValueFactory<SalesOrder, String>("shippingDate"));
         shippingAddressCol.setCellValueFactory(new PropertyValueFactory<SalesOrder, String>("shippingAddress"));
         totalCostCol.setCellValueFactory(new PropertyValueFactory<SalesOrder, Float>("totalCost"));
-
+        usernameLabel.setText(loginController.employeeName);
         leadNameText.setText(passLead.getName());
         loadTableData();
     }

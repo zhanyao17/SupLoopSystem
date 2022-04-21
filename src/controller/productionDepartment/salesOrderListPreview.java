@@ -13,12 +13,15 @@ import java.util.ResourceBundle;
 import base.manufactureDepartment.ArrayList.salesOrderListArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
 import controller.Main;
+import controller.loginPage.loginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -41,6 +44,7 @@ public class salesOrderListPreview implements Initializable
     // label
     @FXML private Label salesOrderListLabel;
     @FXML private Label overallJobCardList;
+    @FXML private Label usernameLabel;
 
     // menu bar
     @FXML private Pane overallJobCardListButton;
@@ -61,6 +65,8 @@ public class salesOrderListPreview implements Initializable
     // Create a Class
     Manufacture_Main viewOrder = new Manufacture_Main();
 
+    // Define main class
+    private Main m = new Main();
 
     // define variable
     private salesOrderListArray temp;
@@ -104,7 +110,15 @@ public class salesOrderListPreview implements Initializable
     }
 
     /***************************************** Log Out  <Action>  ****************************************/  
-
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
     /***************************************** Refresh TableView <Methods>  ****************************************/  
     public void refreshSalesOrderlist() 
     {
@@ -266,6 +280,10 @@ public class salesOrderListPreview implements Initializable
         orderStatusColumn.setCellValueFactory(new PropertyValueFactory<salesOrderListArray,String>("Order_Status"));
      
         tableView.setItems(viewOrder.getSalesOrderList());
+
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
+
     }
 
 }

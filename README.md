@@ -37,4 +37,3 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 - `login_menu` : Linking between all the main interface (Sales -> Stock)
 - `changes_database` : Remind // Rechecking Database content (avoid crashing !!)
 - `testing_bugs` : Test bugs
-- `Sales Department` : Finalize GUI Design

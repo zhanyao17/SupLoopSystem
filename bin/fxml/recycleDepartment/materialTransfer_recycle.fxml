@@ -24,13 +24,19 @@
                <children>
                   <Pane fx:id="demo1" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #3d454d#3d454d;">
                      <children>
-                        <Label layoutX="70.0" layoutY="33.0" prefHeight="17.0" prefWidth="137.0" text="Add Recycled Material" textFill="WHITE" />
+                        <Label layoutX="62.0" layoutY="31.0" prefHeight="19.0" prefWidth="148.0" text="Add Recycled Material" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children></Pane>
                   <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
                   <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #4b555e#4b555e;" />
-                  <Pane fx:id="logOutButton" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e;">
+                  <Pane fx:id="logOutButton" onMouseClicked="#logout" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="116.0" layoutY="28.0" text="Log out" textFill="WHITE" />
+                        <Label layoutX="112.0" layoutY="27.0" text="Log out" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children>
                   </Pane>
                </children>
@@ -39,8 +45,18 @@
          <top>
             <HBox prefHeight="100.0" prefWidth="641.0" style="-fx-background-color: #b6c7d6#b6c7d6;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="100.0" prefWidth="271.0" style="-fx-background-color: #b6c7d6#b6c7d6;">
+                  <Pane prefHeight="100.0" prefWidth="1550.0" style="-fx-background-color: #b6c7d6#b6c7d6;">
                      <children>
+                        <Label fx:id="usernameLabel" layoutX="1301.0" layoutY="37.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="1443.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icon/avatar.png" />
+                           </image>
+                        </ImageView>
                         <Label alignment="CENTER" layoutX="34.0" layoutY="23.0" prefHeight="44.0" prefWidth="231.0" text="SUP-Loop " textFill="#242a30">
                            <font>
                               <Font size="34.0" />
@@ -57,20 +73,6 @@
                            </image>
                         </ImageView>
                      </children></Pane>
-                  <AnchorPane prefHeight="100.0" prefWidth="1276.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="849.0" layoutY="35.0" prefHeight="29.0" prefWidth="192.0" text="Username" textFill="#242a30">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="1029.0" layoutY="34.0" prefHeight="29.0" prefWidth="192.0" text="Department" textFill="#242a30">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
                </children>
             </HBox>
          </top>

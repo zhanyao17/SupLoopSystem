@@ -4,6 +4,7 @@ package controller.salesDepartment;
 //Description: To act as a analytic dashboard and display the statistic and the upcoming deadline
 //First Written on: 15 April 2022
 //Edited on: 18 April 2022
+import controller.loginPage.loginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,10 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import JDBC_Connectors.DBConnectors;
 import base.salesDepartment.ArrayLists.SalesInvoice;
@@ -63,7 +61,6 @@ public class dashboardController implements Initializable {
     @FXML
     private TableColumn<SalesInvoice, String> overdueCol;
 
-
     @FXML
     private BarChart<String, Number> monthlySalesBarChart;
 
@@ -72,6 +69,9 @@ public class dashboardController implements Initializable {
 
     @FXML
     private ComboBox<Integer> yearCombo;
+
+    @FXML
+    private Label usernameLabel;
 
     private Main m = new Main();
 
@@ -92,7 +92,6 @@ public class dashboardController implements Initializable {
 
     private ObservableList<SalesInvoice> overDueOrderList = FXCollections.observableArrayList();
 
-
     private Connection connection = null;
     private PreparedStatement statement = null;
     private ResultSet resultSet = null;
@@ -112,6 +111,7 @@ public class dashboardController implements Initializable {
         dueWorkloadCol.setCellValueFactory(new PropertyValueFactory<SalesInvoice, ProgressBar>("progress"));
         overdueCol.setCellValueFactory(new PropertyValueFactory<SalesInvoice, String>("status"));
 
+        usernameLabel.setText(loginController.employeeName);
         //setup combo box
         yearCombo.setItems(yearList);
         yearCombo.setValue(selectedYear);
@@ -218,7 +218,7 @@ public class dashboardController implements Initializable {
             upcomingDeadlineTable.setItems(dueOrderList);
 
         }catch (SQLException e){
-            e.printStackTrace();
+            e.printStackTrace();    
         }finally {
             closeConnection();
         }
@@ -294,6 +294,15 @@ public class dashboardController implements Initializable {
     }
     public void purchaseOrderClick() throws Exception {
         m.switchScene("/fxml/salesDepartment/purchaseOrderManagement.fxml");
+    }
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
     }
     //close database connection
     public void closeConnection(){

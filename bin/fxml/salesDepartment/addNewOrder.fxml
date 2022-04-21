@@ -34,7 +34,7 @@
                <children>
                   <Pane prefHeight="100.0" prefWidth="245.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="70.0" prefHeight="17.0" prefWidth="164.0" text="Supply Chain Management System" textFill="#242a30">
+                        <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="70.0" prefHeight="17.0" prefWidth="174.0" text="Supply Chain Management System" textFill="#242a30">
                            <font>
                               <Font size="11.0" />
                            </font>
@@ -51,6 +51,20 @@
                         </ImageView>
                      </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="100.0" prefWidth="1106.0">
+                     <children>
+                        <Label fx:id="usernameLabel" layoutX="915.0" layoutY="36.0" text="Username" AnchorPane.rightAnchor="97.00000000000011">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="1010.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icon/avatar.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
          </top>

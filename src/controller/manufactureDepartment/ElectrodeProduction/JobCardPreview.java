@@ -14,7 +14,8 @@ import java.util.ResourceBundle;
 // import class
 import base.manufactureDepartment.ArrayList.JobCardArray;
 import base.manufactureDepartment.Methods.Manufacture_Main;
-
+import controller.Main;
+import controller.loginPage.loginController;
 // javafx
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +23,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -40,6 +44,9 @@ public class JobCardPreview implements Initializable
 
     // Choices Box
     @FXML private ChoiceBox<String> filterChoices;
+
+    // Label
+    @FXML private Label usernameLabel;
 
     // menu bar
     @FXML private Pane logOutButton;
@@ -67,8 +74,11 @@ public class JobCardPreview implements Initializable
     public static boolean inUpdateStatusMode =false;
 
     // define window varialbe
-
     private Parent root;
+
+    // Define main class
+    private Main m = new Main();
+
 
 
     /***************************************** Define Query <Variables> ****************************************/  
@@ -86,7 +96,15 @@ public class JobCardPreview implements Initializable
 
 
     /***************************************** Log Out  <Action>  ****************************************/  
-
+    public void logout() throws Exception{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout?");
+        alert.setContentText("Are you sure");
+        if(alert.showAndWait().get()== ButtonType.OK){
+            m.switchScene("/fxml/loginPage/login.fxml");
+        }
+    }
     /***************************************** Refresh TableView <Methods>  ****************************************/  
     public void refreshJobCardPreview() 
     {
@@ -97,7 +115,7 @@ public class JobCardPreview implements Initializable
 
 
     /***************************************** Show up Update End Date page  <Methods>  ****************************************/  
-    public void popUpEndDatePage(String jId, String fxmlPath) 
+    public void popUpEndDatePage(String jId, String fxmlPath,String oId) 
     {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
@@ -110,7 +128,7 @@ public class JobCardPreview implements Initializable
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setAlwaysOnTop(true);
-            upEndDate.previeweJobCardDetails(jId, rQ);
+            upEndDate.previeweJobCardDetails(jId, rQ,oId);
             
             stage.showAndWait();
             refreshJobCardPreview();
@@ -200,7 +218,7 @@ public class JobCardPreview implements Initializable
                         {
                             // can complete job only
                             inUpdateStatusMode = true;
-                            popUpEndDatePage(row.getJc_Id(),"/fxml/manufactureDepartment/ElectrodeProduction/updateEndDate.fxml" );
+                            popUpEndDatePage(row.getJc_Id(),"/fxml/manufactureDepartment/ElectrodeProduction/updateEndDate.fxml",row.getOrder_Id() );
                         } else {
                             // continue;
                         }
@@ -242,6 +260,8 @@ public class JobCardPreview implements Initializable
 
         colourStatusColumn.setStyle("-fx-alignment: CENTER;");
 
+        // getting employee name
+        usernameLabel.setText(loginController.employeeName);
 
         tableView.setItems(eleJobCard.getJobEleCard());
 

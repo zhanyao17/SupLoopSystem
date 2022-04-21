@@ -158,7 +158,7 @@ public class updateStartDate_CellAssembly implements Initializable
     
         
         // Validation on Material Request Action
-        if (!jobCardData.isReady(rawMaterialQuantity)) {
+        if (!jobCardData.isReady(rawMaterialQuantity,"NR")) {
             // ifelse - determine the job card required any raw material or not
             if (jobCardData.isRawMaterialNull(jobCardRawMaterial)) {
                 // cannot proceed
