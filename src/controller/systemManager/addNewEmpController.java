@@ -1,5 +1,11 @@
 package controller.systemManager;
 
+//Programmer Name: Joe Chok TP061451
+//Program Name: addNewEmpController.java
+//Description: Adding new employee details
+//First Write: 5 April 2022
+//Edited on: 19 April 2022
+
 import JDBC_Connectors.DBConnectors;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

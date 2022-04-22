@@ -1,5 +1,11 @@
 package controller.stockControlDepartment;
 
+//Programmer Name: Kon Kian Xiang TP061242
+//Program Name: notAssignMatController.java
+//Description: To view all recycled product which transfer from manufacture department
+//First Write: 8 April 2022
+//Edited on: 19 April 2022
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;

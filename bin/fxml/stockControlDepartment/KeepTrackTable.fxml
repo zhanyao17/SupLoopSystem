@@ -119,6 +119,7 @@
                         <TextField fx:id="keywordTextField" layoutX="21.0" layoutY="16.0" onKeyTyped="#searchOrderID" prefHeight="29.0" prefWidth="476.0" promptText="Order ID" style="-fx-background-color: #dde2eb #dde2eb; -fx-background-radius: 10; -fx-border-width: 2; -fx-border-color: #ffffff; -fx-border-radius: 10;" />
                      </children>
                   </AnchorPane>
+                  <Label fx:id="warningMessages" layoutX="127.0" layoutY="77.0" text="Label" textFill="RED" />
                </children>
             </AnchorPane>
          </center>

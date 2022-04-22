@@ -74,6 +74,11 @@
                               <Image url="@../../../icon/avatar.png" />
                            </image>
                         </ImageView>
+                        <Label fx:id="usernameLabel1" layoutX="979.0" layoutY="70.0" text="Workstation : Packing Station" textFill="#615353">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
                      </children></Pane>
                </children>
             </HBox>

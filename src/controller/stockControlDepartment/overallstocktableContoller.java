@@ -1,5 +1,11 @@
 package controller.stockControlDepartment;
 
+//Programmer Name: Kon Kian Xiang TP061242
+//Program Name: overallstocktableController.java
+//Description: To view overall in-stock information in warehouse
+//First Write: 1 April 2022
+//Edited on: 19 April 2022
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

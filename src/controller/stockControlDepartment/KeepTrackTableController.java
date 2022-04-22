@@ -1,5 +1,11 @@
 package controller.stockControlDepartment;
 
+//Programmer Name: Kon Kian Xiang TP061242
+//Program Name: KeepTrackTableController.java
+//Description: To update existing material quantity amount to fulfill order.
+//First Write: 5 April 2022
+//Edited on: 19 April 2022
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -62,6 +68,7 @@ public class KeepTrackTableController implements Initializable {
 
     // Label
     @FXML private Label usernameLabel;
+    @FXML private Label warningMessages;
 
     private ObservableList<KeepTrackTableModel> KeepTrackTableModelObservableList = FXCollections.observableArrayList();
 
@@ -287,6 +294,8 @@ public class KeepTrackTableController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resource)
     {
+        warningMessages.setText("");
+
         //getter&setter variable
         materialIDcolumn.setCellValueFactory(new PropertyValueFactory<>("materialID"));
         warehouseIDcolumn.setCellValueFactory(new PropertyValueFactory<>("warehouseID"));
@@ -298,6 +307,11 @@ public class KeepTrackTableController implements Initializable {
 
         showAllNRRaw(q1);
         overalltableview.setItems(KeepTrackTableModelObservableList);
+
+        if (KeepTrackTableModelObservableList.isEmpty()) 
+        {
+            warningMessages.setText("Currently Did Not Have Any Raw Material In Not Ready Condition !!");
+        }
 
         // getting employee name
         usernameLabel.setText(loginController.employeeName);

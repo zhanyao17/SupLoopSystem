@@ -30,7 +30,7 @@
                             </children></Pane>
                         <Pane prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
                         <Pane prefHeight="506.0" prefWidth="206.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;" />
-                        <Pane onMouseClicked="#logout" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
+                        <Pane fx:id="logOutButton" onMouseClicked="#logout" onMouseEntered="#logOutBarEnter" onMouseExited="#logOutBarExited" prefHeight="74.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                             <children>
                                 <Label layoutX="112.0" layoutY="27.0" text="Log out" textFill="WHITE">
                            <font>

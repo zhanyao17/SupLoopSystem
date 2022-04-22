@@ -1,5 +1,11 @@
 package controller.stockControlDepartment;
 
+//Programmer Name: Kon Kian Xiang TP061242
+//Program Name: MaterialRequestTableController.java
+//Description: To view and update in-stock information warehouse label from “RFM” to “WIP”
+//First Write: 2 April 2022
+//Edited on: 19 April 2022
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -49,6 +55,7 @@ public class MaterialRequestTableController implements Initializable {
 
     // Label
     @FXML private Label usernameLabel;
+    @FXML private Label warningMessages;
 
     // Define main class
     private Main m = new Main();
@@ -204,7 +211,8 @@ public class MaterialRequestTableController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resource) {
-
+        
+        warningMessages.setText("");
         //getter&setter variable
         workstationIDcolumn.setCellValueFactory(new PropertyValueFactory<>("workStationID"));
         materialIDcolumn.setCellValueFactory(new PropertyValueFactory<>("materialID"));
@@ -214,6 +222,11 @@ public class MaterialRequestTableController implements Initializable {
 
         showAllMaterialRequestDetails(q2);
         overalltableview.setItems(MaterialRequestTableModelObservableList);
+
+        if (MaterialRequestTableModelObservableList.isEmpty()) 
+        {
+            warningMessages.setText("Currently Did Not Have Any Material Request !!");
+        }
 
         // getting employee name
         usernameLabel.setText(loginController.employeeName);

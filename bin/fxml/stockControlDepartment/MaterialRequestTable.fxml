@@ -104,7 +104,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="overalltableview" layoutX="24.0" layoutY="21.0" onMouseClicked="#selectColumn" prefHeight="684.0" prefWidth="1225.0">
+                  <TableView fx:id="overalltableview" layoutX="24.0" layoutY="37.0" onMouseClicked="#selectColumn" prefHeight="668.0" prefWidth="1225.0">
                      <columns>
                         <TableColumn fx:id="workstationIDcolumn" prefWidth="141.066650390625" text="Workstation ID" />
                         <TableColumn fx:id="materialIDcolumn" prefWidth="158.9332275390625" text="Material ID" />
@@ -113,6 +113,7 @@
                         <TableColumn fx:id="warehouseLabelcolumn" prefWidth="223.9999755859376" text="Warehouse Label" />
                      </columns>
                   </TableView>
+                  <Label fx:id="warningMessages" layoutX="75.0" layoutY="14.0" text="Label" textFill="RED" />
                </children>
             </AnchorPane>
          </center>

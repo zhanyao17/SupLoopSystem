@@ -1,5 +1,11 @@
 package controller.systemManager;
 
+//Programmer Name: Joe Chok TP061451
+//Program Name: employeeDetailsController.java
+//Description: Modify Employee Details (Function INCLD: Add, Edit, Delete)
+//First Write: 5 April 2022
+//Edited on: 19 April 2022
+
 import JDBC_Connectors.DBConnectors;
 import base.systemManager.arrayList.employeeDetailsArray;
 import controller.Main;
@@ -16,6 +22,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
@@ -57,6 +64,9 @@ public class employeeDetailsController implements Initializable
 
     //define root
     private Parent root;
+
+    // menu bar
+    @FXML private Pane logOutButton;
 
     // define varaible 
     employeeDetailsArray temp;
@@ -268,26 +278,17 @@ public class employeeDetailsController implements Initializable
         }    
     }
 
-    /***************************************** Alert Information <Mehtods>   ****************************************/  
-    public void warningInformation() 
-    {
-        
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setContentText("Employee Details Informations !!\n"+
-                            "Employee details had sucessfully deleted.");
-        alert.setTitle("** Information Context **");
-        alert.setHeaderText(null);
-
-        alert.showAndWait();
-    }
-
     /***************************************** Search Employee ID Text field <Action>  ****************************************/  
     public void searchEmpId(KeyEvent event)
     {
         try {
-            filterEmpId(enterEmployeeId.getText(),employeeListQuery);
-            tableView.setItems(empList);
-            enterDeptName.setValue("All");
+            if (enterEmployeeId==null) {/* ignore action*/}
+            else 
+            {
+                filterEmpId(enterEmployeeId.getText(),employeeListQuery);
+                tableView.setItems(empList);
+                // enterDeptName.setValue("All");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -303,10 +304,12 @@ public class employeeDetailsController implements Initializable
               showEmployeeList(employeeListQuery);
               tableView.setItems(empList);
               resetButton.setDisable(true);
+              enterEmployeeId.setText(null);
             }else{
                 filterDeptName(enterDeptName.getValue(),employeeListQuery);
                 tableView.setItems(empList);
                 resetButton.setDisable(false);
+                enterEmployeeId.setText(null);
             }
         }catch(Exception e)
         {
@@ -343,10 +346,14 @@ public class employeeDetailsController implements Initializable
         // validate is there any data selected
         if (selectedEmp!=null) 
         {
-            // String dltEmpId ="DELETE FROM employees WHERE Emp_ID = "+"'"+selectedEmp.getEmployeeId()+"' ;"; 
-            String dltEmpId = "UPDATE employees SET Employees_status = 'Close' WHERE (Emp_ID = "+"'"+selectedEmp.getEmployeeId()+"');";
-            insertData(dltEmpId);
-            warningInformation();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete Information");
+            alert.setHeaderText("This Employee Data Will Be Deleted !!");
+            alert.setContentText("Are you sure ?");
+            if(alert.showAndWait().get()== ButtonType.OK){
+                String dltEmpId = "UPDATE employees SET Employees_status = 'Close' WHERE (Emp_ID = "+"'"+selectedEmp.getEmployeeId()+"');";
+                insertData(dltEmpId);
+            }
         }
         
         // refresh table view
@@ -379,6 +386,12 @@ public class employeeDetailsController implements Initializable
             }
         }
     }
+
+    // logout button entered
+    public void logOutBarEnter() {logOutButton.setStyle("-fx-background-color: #3d454d");}
+
+    // logout button entered
+    public void logOutBarExited() {logOutButton.setStyle("-fx-background-color: #4b555e");}
 
 
     @Override

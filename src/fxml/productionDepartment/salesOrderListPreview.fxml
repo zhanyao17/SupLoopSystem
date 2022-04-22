@@ -29,7 +29,7 @@
                      </children></Pane>
                   <Pane fx:id="overallJobCardListButton" onMouseClicked="#jumpToOverallJobCard" onMouseEntered="#overallJcEntered" onMouseExited="#overallJcExited" prefHeight="82.0" prefWidth="272.0" style="-fx-background-color: #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e #4b555e#4b555e;">
                      <children>
-                        <Label layoutX="71.0" layoutY="39.0" text="Overall Job Card List" textFill="WHITE">
+                        <Label layoutX="71.0" layoutY="29.0" text="Overall Job Card List" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font></Label>
