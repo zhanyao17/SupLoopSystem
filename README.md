@@ -2,9 +2,9 @@
 ![supLoopLogo](/src/logo/logoM.PNG)
 ------------------------------------------
 # :mega: README.MD Breakdowns
-## [1. Folder_Structure](#folderstructure)
-## [2. User_Interface](#userinterface)
-## [3. Installations](#installations-guidances)
+## [1. Folder_Structure](#Folder-Structure)
+## [2. User_Interface](#User-Interface)
+## [3. Installations](#Installations-Guidances)
 
 
 #  :open_file_folder: Folder Structure
