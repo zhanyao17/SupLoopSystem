@@ -116,6 +116,7 @@ public class salesOrderManagementController extends dashboardController implemen
             "Show All", "Generated", "Ready", "Not_Ready"
     );
 
+    private Boolean inPurchaseWindow = false;
 
     private SalesOrder salesOrderSelected = null;
 
@@ -184,26 +185,30 @@ public class salesOrderManagementController extends dashboardController implemen
     public void generatePurchaseOrder(){
         try{
             if(salesOrderSelected != null){
-                //avoid user from generating purchase order twice for an order
-                if(salesOrderSelected.getStatus().equals("Ready") || salesOrderSelected.getStatus().equals("Generated")){
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText("The purchase order for this sale order has been generated");
-                    alert.setContentText("You cannot generate multiple purchase order!");
-                    alert.show();
-                    return;
+                if(!inPurchaseWindow){
+                    //avoid user from generating purchase order twice for an order
+                    if(salesOrderSelected.getStatus().equals("Ready") || salesOrderSelected.getStatus().equals("Generated")){
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("The purchase order for this sale order has been generated");
+                        alert.setContentText("You cannot generate multiple purchase order!");
+                        alert.show();
+                        return;
+                    }
+                    inPurchaseWindow = true;
+                    //get resource from fxml file
+                    generatePurchaseOrderController.passOrder = salesOrderSelected;
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/salesDepartment/generatePurchaseOrder.fxml"));
+                    Parent Root = loader.load();
+                    //setup new window
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(Root);
+                    stage.setScene(scene);
+                    stage.setResizable(false);
+                    stage.setAlwaysOnTop(true);
+                    stage.showAndWait();
+                    inPurchaseWindow = false;
                 }
-                //get resource from fxml file
-                generatePurchaseOrderController.passOrder = salesOrderSelected;
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/salesDepartment/generatePurchaseOrder.fxml"));
-                Parent Root = loader.load();
-                //setup new window
-                Stage stage = new Stage();
-                Scene scene = new Scene(Root);
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.setAlwaysOnTop(true);
-                stage.show();
             }else{
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERROR");

@@ -83,6 +83,7 @@ public class purchaseOrderManagementController extends dashboardController imple
     //load data into table
     public void loadPurchaseTableData(){
         try {
+            purchaseList.clear();
             //retrieve data from database
             connection = new DBConnectors().getConnection();
             statement = connection.prepareStatement("SELECT po.Purchase_ID, po.Order_ID,s.Supplier_name, rm.Raw_material_name, pi.Pur_invoice_date,prm.tot_quantity, pi.tot_purchase_amount " +
