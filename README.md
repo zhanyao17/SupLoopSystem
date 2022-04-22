@@ -1,13 +1,13 @@
 # Sup Loop System
 ![supLoopLogo](/src/logo/logoM.PNG)
-
+------------------------------------------
 # :mega: README.MD Breakdowns
 ## [1. Folder_Structure](#folder-structure)
 ## [2. User_Interface](#user-interface)
 ## [3. Installations](#installations-guidances)
 
 
-# Folder Structure
+# :open_file_folder: Folder Structure
 
 The workspace contains three main folders, where:
 - `.vscode`: Folder contains .json configurations setting.
@@ -22,7 +22,7 @@ The workspace contains three main folders, where:
     - `logo`: Storing the logo of the system.
     
 ------------------------------------------
-# User Interface
+# :busts_in_silhouette: User Interface
 - System Manager
 - Sales Department
 - Production Manager
@@ -31,7 +31,7 @@ The workspace contains three main folders, where:
 - Recycle Department
 
 ------------------------------------------
-# Installations Guidances
+#  :wrench: Installations Guidances
 > This Section will included how to install dockers, setting up MySQL Database in docker, Setting up JavaFX library in VS code and Integrating JDBC with java.
 ## Docker installations 
 - Guidances for install docker -> [here](https://docs.docker.com/desktop/windows/install/).
@@ -52,10 +52,7 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
 2. Download JDBC Drivers (MySQL) -> [here](https://dev.mysql.com/downloads/connector/j/).
 
 3. Upload References library to your current projects (** .jar files **)
-    - Upload downloaded library into your project Refereced Library
-        ```
-        ~/SupLoopSystem/Referenced Libraries/[Upload Here]
-        ```
+    - Upload downloaded library into your project Refereced Library `/SupLoopSystem/Referenced Libraries/[Upload Here]`
 4. Configuring VM Machinces Environment to support **JavaFX** 
     - Adding new configure setting "vmArgs" in `SupLoopSystem/.vscode/launch.json` with beloow json code
     ```json

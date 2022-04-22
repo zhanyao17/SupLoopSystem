@@ -61,13 +61,13 @@
                         <Label layoutX="550.0" layoutY="37.0" text="Supplier Contact:" />
                         <Line endX="100.0" layoutX="119.0" layoutY="27.0" startX="-100.0" />
                         <CheckBox fx:id="showAllCheckBox" layoutX="1159.0" layoutY="147.0" mnemonicParsing="false" onAction="#getCheckBox" text="Show All" />
-                        <TableView fx:id="supplierTable" layoutX="-295.0" layoutY="148.0" onMouseClicked="#getSupplierTableClick" prefHeight="481.0" prefWidth="1223.0">
+                        <TableView fx:id="supplierTable" layoutX="11.0" layoutY="172.0" onMouseClicked="#getSupplierTableClick" prefHeight="481.0" prefWidth="1223.0">
                           <columns>
                             <TableColumn fx:id="spIDCol" prefWidth="130.4000244140625" text="Supplier ID" />
                             <TableColumn fx:id="spNameCol" minWidth="0.0" prefWidth="333.60003662109375" text="Supplier Name" />
                               <TableColumn fx:id="spMailCol" prefWidth="452.79986572265625" text="Supplier Mail" />
                               <TableColumn fx:id="spContactCol" prefWidth="172.79998779296875" text="Supplier Contact" />
-                              <TableColumn fx:id="spStatusCol" prefWidth="123.199951171875" text="Status" />
+                              <TableColumn fx:id="spStatusCol" prefWidth="131.0" text="Status" />
                           </columns>
                         </TableView>
                      </children>
