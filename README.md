@@ -1,5 +1,5 @@
 # Sup Loop System
-![supLoopLogo](/src/logo/Mercy 3.PNG)
+![supLoopLogo](/src/logo/mainLogo.PNG)
 
 # :mega: README.MD Breakdowns
 ## [1. Folder_Structure](#folder-structure)
