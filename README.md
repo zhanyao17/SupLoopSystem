@@ -1,6 +1,6 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Installations
+1. Database installations.
+    - `mysqlBackup` will be used to restore Database_suploop into your dockers 
 
 ## Folder Structure
 
@@ -26,7 +26,17 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 
 ## First Time Set-up
-1. Database - Download MySql & Setup on Docker -> with dockers set up [here](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html).
+### Docker installations 
+**Guidances for install docker** -> [here](https://docs.docker.com/desktop/windows/install/).
+
+### Database Setup
+**Setting up MySQL Database in Docker** -> [here](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html).
+
+### Database Restorations
+**Restore Database** -> Repalce backupFiles > `backup_suploop.sql`
+```
+cat [backupFiles] | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_username] --password[mysql_passwords]=root [database_name]
+```
 
 ## Dependency Management
 
