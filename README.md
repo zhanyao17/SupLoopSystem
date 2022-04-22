@@ -2,12 +2,12 @@
 ![supLoopLogo](/src/logo/logoM.PNG)
 ------------------------------------------
 # :mega: README.MD Breakdowns
-## [1. Folder_Structure](#folder-structure)
-## [2. User_Interface](#user-interface)
+## [1. Folder_Structure](#folderstructure)
+## [2. User_Interface](#userinterface)
 ## [3. Installations](#installations-guidances)
 
 
-# :open_file_folder: Folder Structure
+#  :open_file_folder: Folder Structure
 
 The workspace contains three main folders, where:
 - `.vscode`: Folder contains .json configurations setting.
