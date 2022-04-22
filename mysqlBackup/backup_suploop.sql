@@ -497,33 +497,6 @@ INSERT INTO `sales_order` VALUES ('O1','i0001','S1',5000,'2022-01-12','2022-02-1
 UNLOCK TABLES;
 
 --
--- Table structure for table `sales_order_employees`
---
-
-DROP TABLE IF EXISTS `sales_order_employees`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `sales_order_employees` (
-  `Emp_ID` char(5) NOT NULL,
-  `Order_ID` varchar(8) NOT NULL,
-  PRIMARY KEY (`Emp_ID`,`Order_ID`),
-  KEY `Order_ID` (`Order_ID`),
-  CONSTRAINT `sales_order_employees_ibfk_1` FOREIGN KEY (`Emp_ID`) REFERENCES `employees` (`Emp_ID`),
-  CONSTRAINT `sales_order_employees_ibfk_2` FOREIGN KEY (`Order_ID`) REFERENCES `sales_order` (`Order_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sales_order_employees`
---
-
-LOCK TABLES `sales_order_employees` WRITE;
-/*!40000 ALTER TABLE `sales_order_employees` DISABLE KEYS */;
-INSERT INTO `sales_order_employees` VALUES ('E0003','O1'),('E0003','O2'),('E0004','O3'),('E0004','O4'),('E0005','O5'),('E0005','O6');
-/*!40000 ALTER TABLE `sales_order_employees` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `supplier`
 --
 
@@ -641,4 +614,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-22  8:51:05
+-- Dump completed on 2022-04-22 10:22:29
