@@ -46,35 +46,41 @@ public class loginController {
                 statement.setString(2,passwordText.getText());
                 resultSet = statement.executeQuery();
                 if(resultSet.next()){
-                    String departmentID = resultSet.getString("Dept_ID");
-                    employeeName = resultSet.getString("Emp_name");
-                    if(departmentID.equals("D0001")){
-                        new Main().switchScene("/fxml/stockControlDepartment/overallstocktable.fxml");
+                    if(resultSet.getString("Emp_ID").equals(IDText.getText()) &&
+                            resultSet.getString("Emp_pass").equals(passwordText.getText())){
 
-                    }else if(departmentID.equals("D0002")){
-                        new Main().switchScene("/fxml/salesDepartment/dashboard.fxml");
+                        String departmentID = resultSet.getString("Dept_ID");
+                        employeeName = resultSet.getString("Emp_name");
+                        if(departmentID.equals("D0001")){
+                            new Main().switchScene("/fxml/stockControlDepartment/overallstocktable.fxml");
 
-                    }else if(departmentID.equals("D0003")){
-                        new Main().switchScene("/fxml/productionDepartment/salesOrderListPreview.fxml");
+                        }else if(departmentID.equals("D0002")){
+                            new Main().switchScene("/fxml/salesDepartment/dashboard.fxml");
 
-                    }else if(departmentID.equals("D0004")){
-                        new Main().switchScene("/fxml/recycleDepartment/materialTransfer_recycle.fxml");
+                        }else if(departmentID.equals("D0003")){
+                            new Main().switchScene("/fxml/productionDepartment/salesOrderListPreview.fxml");
 
-                    }else if(departmentID.equals("D0005")){
-                        new Main().switchScene("/fxml/systemManager/employeeDetails.fxml");
+                        }else if(departmentID.equals("D0004")){
+                            new Main().switchScene("/fxml/recycleDepartment/materialTransfer_recycle.fxml");
 
-                    }else if(departmentID.equals("D0006")){
-                        new Main().switchScene("/fxml/manufactureDepartment/ElectrodeProduction/JobCardPreview.fxml");
+                        }else if(departmentID.equals("D0005")){
+                            new Main().switchScene("/fxml/systemManager/employeeDetails.fxml");
 
-                    }else if(departmentID.equals("D0007")){
-                        new Main().switchScene("/fxml/manufactureDepartment/JerryRollConstruction/JobCardPreview_JerryRoll.fxml");
+                        }else if(departmentID.equals("D0006")){
+                            new Main().switchScene("/fxml/manufactureDepartment/ElectrodeProduction/JobCardPreview.fxml");
 
-                    }else if(departmentID.equals("D0008")){
-                        new Main().switchScene("/fxml/manufactureDepartment/CellAssemblyStation/JobCardPreview_CellAssembly.fxml");
+                        }else if(departmentID.equals("D0007")){
+                            new Main().switchScene("/fxml/manufactureDepartment/JerryRollConstruction/JobCardPreview_JerryRoll.fxml");
 
-                    }else if(departmentID.equals("D0009")){
-                        new Main().switchScene("/fxml/manufactureDepartment/PackingStation/JobCardPreview_Packing.fxml");
+                        }else if(departmentID.equals("D0008")){
+                            new Main().switchScene("/fxml/manufactureDepartment/CellAssemblyStation/JobCardPreview_CellAssembly.fxml");
 
+                        }else if(departmentID.equals("D0009")){
+                            new Main().switchScene("/fxml/manufactureDepartment/PackingStation/JobCardPreview_Packing.fxml");
+
+                        }
+                    }else{
+                        errorLabel.setText("Incorrect ID or Password!");
                     }
                 }else{
                     errorLabel.setText("Incorrect ID or Password!");
