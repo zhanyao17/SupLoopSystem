@@ -1,7 +1,6 @@
-# Sup Loop System
 ![supLoopLogo](/src/logo/logoM.PNG)
 ------------------------------------------
-# :mega: README.MD Breakdowns
+# Breakdowns
 ## [1. Folder_Structure](#:open_file_folder:-folder-structure)
 ## [2. User_Interface](#:busts_in_silhouette:-user-interface)
 ## [3. Installations](#:wrench:-installations-guidances)
