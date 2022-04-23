@@ -22,7 +22,7 @@
     This model is the process of planning, implementing, and regulating the efficient, cost-effective movement of raw materials, in-process inventories, completed goods, and related information from the point of consumption to the point of origin in order to reclaim value or dispose of it properly. 
 </p>
 
-[Click here for more information](https://en.wikipedia.org/wiki/Reverse_logistics)
+[Click here for more information](https://en.wikipedia.org/wiki/Reverse_logistics).
 
 ## The Combinationa of FSC & RSC
 <p align="left" width="100%">
