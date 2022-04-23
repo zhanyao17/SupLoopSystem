@@ -24,7 +24,9 @@
 
 [Click here for more information](https://en.wikipedia.org/wiki/Reverse_logistics)
 
-
+<p align="center" width="100%">
+    <img src="https://img.c3controls.com/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,g_west,h_500,q_auto,w_auto/v1/content/c3controls-Forward-Reverse-Logistics" width="700">
+</p>
 
 ------------------------------------------
 #  :open_file_folder: Folder Structure
