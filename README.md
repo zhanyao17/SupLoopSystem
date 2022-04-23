@@ -1,4 +1,4 @@
-<img src="/src/logo/logoM.PNG" width="50">
+<img src="/src/logo/logoM.PNG" width="350">
 ![](/src/logo/logoM.PNG)
 ------------------------------------------
 # Breakdowns
