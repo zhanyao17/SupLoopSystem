@@ -1,5 +1,4 @@
-<img src="/src/logo/logoM.PNG" width="750">
-![](/src/logo/logoM.PNG)
+<div style="text-align:center"><img src="/src/logo/logoM.PNG" width="750"></div>
 
 
 ------------------------------------------
