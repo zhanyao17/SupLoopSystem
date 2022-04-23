@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img src="/src/logo/logoM.PNG" width="750">
+    <img src="/src/logo/logoM.PNG" width="700">
 </p>
 
 
@@ -19,7 +19,7 @@
 
 ## Reverse Logistic // Reverse Supply Chain (RSC)?
 <p align='justify'>
-    This model is the process of planning, implementing, and regulating the efficient, cost-effective movement of raw materials, in-process inventories, completed goods, and related information from the point of consumption to the point of origin in order to reclaim value or dispose of it properly. 
+    The reverse supply chain is the backward movement of goods (such as defective products) from vendors back up the supply chain. It is the opposite of the typical supply chain, where items go from manufacturer to retailer to consumer. 
 </p>
 
 [Click here for more information](https://en.wikipedia.org/wiki/Reverse_logistics)
