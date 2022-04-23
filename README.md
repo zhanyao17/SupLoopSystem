@@ -54,11 +54,14 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
     - Upload downloaded library into your project Refereced Library `/SupLoopSystem/Referenced Libraries/[Upload Here]`
 4. Configuring VM Machinces Environment to support **JavaFX** 
     - Adding new configure setting "vmArgs" in `SupLoopSystem/.vscode/launch.json` with beloow json code
+    
     ```json
     "vmArgs": "--module-path [JavaFX_Path] --add-modules javafx.controls,javafx.fxml"
     ``` 
+    
 5. Changing Username & Login Passwords on **JDBC**
     - Replace the **Username** & **Passwords** in `SupLoopSystem/src/JDBC_Connectors/DBConnectors.java` (Base on your mysql_username, mysql_passwords)
+    
     ``` java
     public class DBConnectors{  // switch user 
     public Connection getConnection() throws SQLException
