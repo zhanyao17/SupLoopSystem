@@ -21,7 +21,9 @@
 <p align='justify'>
     This model is the process of planning, implementing, and regulating the efficient, cost-effective movement of raw materials, in-process inventories, completed goods, and related information from the point of consumption to the point of origin in order to reclaim value or dispose of it properly. 
 </p>
-[Click here for more information](https://en.wikipedia.org/wiki/Reverse_logistics).
+
+[Click here for more information](https://en.wikipedia.org/wiki/Reverse_logistics)
+
 
 
 ------------------------------------------
@@ -68,7 +70,6 @@ The workspace contains three main folders, where:
 cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_username] --password[mysql_passwords]=root [database_name]
 ```
 
-
 ## Setting Up JavaFX library in VS Code
 > Steps by Steps guidances....
 1. Download JavaFX Library -> [here](https://gluonhq.com/products/javafx/).
@@ -80,15 +81,12 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
 4. Configuring VM Machinces Environment to support **JavaFX** 
     - Adding new configure setting "vmArgs" in `SupLoopSystem/.vscode/launch.json` with beloow json code
     
-    
     ```json
     "vmArgs": "--module-path [JavaFX_Path] --add-modules javafx.controls,javafx.fxml"
     ``` 
-    
-    
+        
 5. Changing Username & Login Passwords on **JDBC**
     - Replace the **Username** & **Passwords** in `SupLoopSystem/src/JDBC_Connectors/DBConnectors.java` (Base on your mysql_username, mysql_passwords)
-    
     
     ``` java
     public class DBConnectors{  // switch user 
@@ -97,6 +95,5 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Sup_Loop_Database","[mysql_username]","[mysql_passwords]");
         return connection;}
     }
-    ```
-    
+    ```    
 6. Save all the changes
