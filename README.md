@@ -1,9 +1,9 @@
 ![supLoopLogo](/src/logo/logoM.PNG)
 ------------------------------------------
 # Breakdowns
-## [1. Folder_Structure](#:open_file_folder:-folder-structure)
-## [2. User_Interface](#:busts_in_silhouette:-user-interface)
-## [3. Installations](#:wrench:-installations-guidances)
+## [1.-Folder_Structure](#:open_file_folder:-folder-structure)
+## [2.-User_Interface](#:busts_in_silhouette:-user-interface)
+## [3.-Installations](#:wrench:-installations-guidances)
 
 
 #  :open_file_folder: Folder Structure
@@ -39,7 +39,8 @@ The workspace contains three main folders, where:
 - Setting up MySQL Database in Docker -> [here](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html).
 
 ## Database Restorations
-- Using bellow command line to restore backed up database. (**cat [file from mysqlBackup]**)
+- Using bellow command line (in terminal) to restore backed up database. (**cat [file from mysqlBackup]**)
+
 ```
 cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_username] --password[mysql_passwords]=root [database_name]
 ```
@@ -66,7 +67,7 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
     public class DBConnectors{  // switch user 
     public Connection getConnection() throws SQLException
     {
-    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Sup_Loop_Database","newUser","zhanyao12345");// username & passwords
+    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Sup_Loop_Database","[mysql_username]","[mysql_passwords]");
         return connection;}
     }
     ```
