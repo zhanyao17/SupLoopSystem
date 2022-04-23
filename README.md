@@ -1,4 +1,5 @@
-![<img src="/src/logo/logoM.PNG" width="15">](/src/logo/logoM.PNG)
+<img src="/src/logo/logoM.PNG" width="50">
+![](/src/logo/logoM.PNG)
 ------------------------------------------
 # Breakdowns
 ## [1. Folder_Structure](#:open_file_folder:-folder-structure)
