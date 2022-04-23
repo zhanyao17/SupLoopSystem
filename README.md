@@ -1,11 +1,14 @@
-![supLoopLogo](/src/logo/logoM.PNG)
+![supLoopLogo](/src/logo/logoM.PNG | width=100)
 ------------------------------------------
 # Breakdowns
-## [1.-Folder_Structure](#:open_file_folder:-folder-structure)
-## [2.-User_Interface](#:busts_in_silhouette:-user-interface)
-## [3.-Installations](#:wrench:-installations-guidances)
+## [1. Folder_Structure](#:open_file_folder:-folder-structure)
+## [2. User_Interface](#:busts_in_silhouette:-user-interface)
+## [3. Installations](#:wrench:-installations-guidances)
+
+------------------------------------------
 
 
+------------------------------------------
 #  :open_file_folder: Folder Structure
 
 The workspace contains three main folders, where:
@@ -42,6 +45,7 @@ The workspace contains three main folders, where:
 - Using bellow command line (in terminal) to restore backed up database. (**cat [file from mysqlBackup]**)
 
 ```
+# restoring backup files
 cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_username] --password[mysql_passwords]=root [database_name]
 ```
 
