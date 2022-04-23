@@ -56,10 +56,12 @@ The workspace contains three main folders, where:
 ## Database Restorations
 - Using bellow command line (in terminal) to restore backed up database. (**cat [file from mysqlBackup]**)
 
+
 ```
 # restoring backup files
 cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_username] --password[mysql_passwords]=root [database_name]
 ```
+
 
 ## Setting Up JavaFX library in VS Code
 > Steps by Steps guidances....
@@ -72,12 +74,15 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
 4. Configuring VM Machinces Environment to support **JavaFX** 
     - Adding new configure setting "vmArgs" in `SupLoopSystem/.vscode/launch.json` with beloow json code
     
+    
     ```json
     "vmArgs": "--module-path [JavaFX_Path] --add-modules javafx.controls,javafx.fxml"
     ``` 
     
+    
 5. Changing Username & Login Passwords on **JDBC**
     - Replace the **Username** & **Passwords** in `SupLoopSystem/src/JDBC_Connectors/DBConnectors.java` (Base on your mysql_username, mysql_passwords)
+    
     
     ``` java
     public class DBConnectors{  // switch user 
@@ -87,4 +92,5 @@ cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_usern
         return connection;}
     }
     ```
+    
 6. Save all the changes
