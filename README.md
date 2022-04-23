@@ -6,9 +6,9 @@
 ------------------------------------------
 # Breakdowns
 ## [1. Background](#rocket-background)
-## [2. Folder_Structure](#:open_file_folder:-folder-structure)
-## [3. User_Interface](#:busts_in_silhouette:-user-interface)
-## [4. Installations](#:wrench:-installations-guidances)
+## [2. Folder_Structure](#open_file_folder-folder-structure)
+## [3. User_Interface](#busts_in_silhouette-user-interface)
+## [4. Installations](#wrench-installations-guidances)
 
 
 ------------------------------------------
