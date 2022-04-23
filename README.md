@@ -1,6 +1,6 @@
-<div style="text-align:center"><img src="/src/logo/logoM.PNG" width="750"></div>
-
-
+<p align="center" width="100%">
+    <img src="/src/logo/logoM.PNG" width="750">
+</p>
 ------------------------------------------
 # Breakdowns
 ## [1. Folder_Structure](#:open_file_folder:-folder-structure)
