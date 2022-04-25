@@ -14,7 +14,7 @@
 ------------------------------------------
 # :rocket: Background
 <p align="justify"> 
-    Supply Chain System is become more and more crutial and important now a days especially for manufacture factory. Growing interest in supply chain systems has emphasised the importance of implementing proper ways to enable effective management of their complexity, immensity and breadth of coverages. Hence, the aim of this project is to develop an Integrated Supply Chain System (**Sup Loop System**)for battery manufacturing factory, for additional reverse logistic concept will also been used in this project to handle sustainable activities such as (Recycle, Reuse & Returned) in battery manufacturing. Therefore, in this project Java Programming with Object Oriented Programming Concept will be used for developing this Supply Chain System (Sup Loop System). Besides that, Chen’s Notations concept will be used in the database designing stages to support integrating MySQL Database with the Supply Chain System. Other than that, Java FX external library will be used to integrate system with graphic interfaces. Besides that, all the user function manual cover all the target users’ function will be shown in this report. Lastly, unit testing on each of the system function will also been carry to ensures there is not bugs or error in the deployed system for additional User Acceptance Testing for user such as Sales Managers, Manufacture workers, Production Managers, Stock Control workers, Recycle Department Managers and System Managers (UAT) will also been carry out to ensures that this system meet the user’s requirement. 
+    Supply Chain System is become more and more crutial and important now a days especially for manufacture factory. Growing interest in supply chain systems has emphasised the importance of implementing proper ways to enable effective management of their complexity, immensity and breadth of coverages. Hence, the aim of this project is to develop an Integrated Supply Chain System (Sup Loop System)for battery manufacturing factory, for additional reverse logistic concept will also been used in this project to handle sustainable activities such as (Recycle, Reuse & Returned) in battery manufacturing.
 </p>
 
 ## Reverse Logistic // Reverse Supply Chain (RSC)?
@@ -33,7 +33,7 @@
 #  :open_file_folder: Folder Structure
 
 The workspace contains three main folders, where:
-- `.vscode`: Folder contains .json configurations setting.
+- `.vscode`: .json files (For configuring).
 - `mysqlBackup`: Folder contains database backup files.
 
 - `src`: Folder to maintain sources included (base, controller, fxml).
@@ -73,7 +73,7 @@ The workspace contains three main folders, where:
 cat backup_suploop.sql | docker exec -i CONTAINER /usr/bin/mysql -u [mysql_username] --password[mysql_passwords]=root [database_name]
 ```
 
-## Setting Up JavaFX library in VS Code
+## Setting Up JavaFX library & JDBC in VS Code
 > Steps by Steps guidances....
 1. Download JavaFX Library -> [here](https://gluonhq.com/products/javafx/).
 
